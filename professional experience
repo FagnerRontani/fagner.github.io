@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Experience</title>
+  <style>
+    :root{
+      --bg:#0b1324;          /* deep navy */
+      --panel:#0f1a2a;       /* card background */
+      --panel-2:#0b1626;     /* alt panel */
+      --text:#e5e7eb;        /* base text */
+      --muted:#9aa4b2;       /* secondary text */
+      --edge:#1f2a44;        /* borders */
+      --accent:#4ade80;      /* mint */
+      --accent-2:#60a5fa;    /* soft blue */
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 20% -10%, #11203b 0%, transparent 55%),
+                  radial-gradient(900px 600px at 120% 10%, #0d1f3a 0%, transparent 50%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .wrap{max-width:1100px; margin:32px auto; padding:0 20px}
+
+    /* Header */
+    .head{
+      display:flex; align-items:center; gap:16px; margin-bottom:24px;
+    }
+    .orb{width:28px;height:28px;border-radius:50%; background:radial-gradient(circle at 30% 30%, var(--accent) 0%, #21c55d 40%, #1d9e51 60%, transparent 70%),
+                                   radial-gradient(circle at 70% 70%, var(--accent-2) 0%, #2563eb 45%, transparent 70%);
+           box-shadow:0 0 30px rgba(99, 255, 169, .25)}
+    h1{font-weight:800; letter-spacing:.3px; margin:0; font-size: clamp(28px, 4vw, 42px)}
+    .subtitle{color:var(--muted); margin-top:4px; font-size:14px}
+
+    /* Card / timeline */
+    .timeline{position:relative; margin-top:20px}
+    .timeline:before{content:""; position:absolute; left:16px; top:0; bottom:0; width:2px; background:linear-gradient(#233251, #1b2743)}
+
+    .item{position:relative; margin-left:54px; margin-bottom:18px}
+    .card{
+      background:linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+      border:1px solid var(--edge); border-radius:var(--radius); padding:18px 18px 16px; box-shadow:var(--shadow);
+    }
+    .dot{position:absolute; left:-42px; top:20px; width:20px; height:20px; border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, var(--accent) 0%, #22c55e 45%, #166534 80%);
+      box-shadow:0 0 0 4px rgba(76, 230, 150, .15), 0 0 24px rgba(74,222,128,.35);
+      border:1px solid #1f5138;
+    }
+
+    .role{display:flex; flex-wrap:wrap; gap:10px; align-items:baseline}
+    .role h2{margin:0; font-size: clamp(18px, 2.6vw, 22px)}
+    .org{color:var(--muted); font-style:italic}
+    .period{margin-left:auto; color:#cdd5e1; font-weight:700}
+
+    .meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
+    .badge{font-size:12px; color:#cdd5e1; padding:6px 10px; border-radius:999px; background:rgba(148,163,184,.08);
+           border:1px solid rgba(148,163,184,.18)}
+
+    .desc{margin-top:10px; color:#d8dee9}
+    .bullets{margin:12px 0 6px 16px}
+    .bullets li{margin:6px 0}
+
+    /* edit helpers */
+    .toolbar{display:flex; gap:8px; margin:12px 0 22px}
+    .toolbar button{background:#0b1324; color:#dbe3f0; border:1px solid var(--edge); padding:8px 12px; border-radius:10px; cursor:pointer}
+    .toolbar button:hover{border-color:#2f3f63}
+
+    [contenteditable="true"]{outline:2px dashed rgba(96,165,250,.35); outline-offset:4px; border-radius:12px}
+
+    @media (max-width:720px){
+      .timeline:before{left:12px}
+      .item{margin-left:44px}
+      .dot{left:-38px}
+      .period{margin-left:0; width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="head">
+      <div class="orb" aria-hidden="true"></div>
+      <div>
+        <h1>Professional Experience</h1>
+        <div class="subtitle">Precision Agriculture • Remote Sensing • GIS • ML • UAV Ops</div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <button id="editBtn" title="Toggle inline editing">✏️ Edit</button>
+      <button id="saveBtn" title="Save edits to this browser">💾 Save</button>
+      <small class="subtitle">Tip: Click <b>Edit</b> to modify text directly, then <b>Save</b>. (Saves in your browser/localStorage.)</small>
+    </div>
+
+    <section class="timeline" id="timeline">
+      <!-- NDSU -->
+      <article class="item">
+        <span class="dot" aria-hidden="true"></span>
+        <div class="card" contenteditable="false">
+          <div class="role">
+            <h2>Ph.D. Student</h2>
+            <span class="org">— North Dakota State University (NDSU), Fargo, North Dakota, USA</span>
+            <span class="period">2025 – Present</span>
+          </div>
+          <div class="meta">
+            <span class="badge">Remote Sensing</span>
+            <span class="badge">Machine‑Mounted Sensors</span>
+            <span class="badge">Decision Support</span>
+            <span class="badge">ML for Agriculture</span>
+          </div>
+          <p class="desc">Conducting research on integrating drone‑based and machine‑mounted sensors for crop monitoring and decision‑making in precision agriculture. Developing expertise in satellite data processing and applying machine learning techniques for smart farming solutions.</p>
+        </div>
+      </article>
+
+      <!-- LSU -->
+      <article class="item">
+        <span class="dot" aria-hidden="true"></span>
+        <div class="card" contenteditable="false">
+          <div class="role">
+            <h2>Research Scholar</h2>
+            <span class="org">— Louisiana State University (LSU), Baton Rouge, Louisiana, USA</span>
+            <span class="period">2020 – 2025</span>
+          </div>
+          <div class="meta">
+            <span class="badge">UAV Ops</span>
+            <span class="badge">Image Acquisition</span>
+            <span class="badge">Processing</span>
+            <span class="badge">Extension</span>
+          </div>
+          <p class="desc">Worked on drone image acquisition and processing for agricultural applications. Gained experience with major crops grown in the Southern U.S. and engaged with local farmers through research events and extension activities. Presented research at national and international conferences.</p>
+        </div>
+      </article>
+
+      <!-- MSc -->
+      <article class="item">
+        <span class="dot" aria-hidden="true"></span>
+        <div class="card" contenteditable="false">
+          <div class="role">
+            <h2>M.Sc. in Agronomy</h2>
+            <span class="org">— Federal University of Santa Maria (UFSM), Frederico Westphalen, Rio Grande do Sul, Brazil</span>
+            <span class="period">2018 – 2020</span>
+          </div>
+          <div class="meta">
+            <span class="badge">Cover Crops</span>
+            <span class="badge">Nutrient Cycling</span>
+            <span class="badge">Fertilizer Rx Maps</span>
+          </div>
+          <p class="desc">Focused on the management and efficiency of cover crops, including their role in nutrient cycling (phosphorus, potassium, and nitrogen). Worked with fertilizer recommendations based on soil analysis and created prescription maps using precision agriculture tools.</p>
+        </div>
+      </article>
+
+      <!-- BSc -->
+      <article class="item">
+        <span class="dot" aria-hidden="true"></span>
+        <div class="card" contenteditable="false">
+          <div class="role">
+            <h2>B.Sc. in Agronomy</h2>
+            <span class="org">— Federal University of Santa Maria (UFSM), Frederico Westphalen, Rio Grande do Sul, Brazil</span>
+            <span class="period">2014 – 2018</span>
+          </div>
+          <div class="meta">
+            <span class="badge">Precision Agriculture</span>
+            <span class="badge">Fieldwork</span>
+            <span class="badge">Equipment Calibration</span>
+          </div>
+          <p class="desc">Specialized in precision agriculture, large‑scale crop management, agricultural machinery, and embedded technologies. Developed strong foundations in fieldwork, crop scouting, and precision equipment calibration.</p>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <script>
+    const editBtn = document.getElementById('editBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const cards = document.querySelectorAll('.card');
+
+    // restore saved
+    const saved = localStorage.getItem('professional_experience_html');
+    if (saved) {
+      document.getElementById('timeline').outerHTML = JSON.parse(saved);
+    }
+
+    let editing = false;
+    editBtn.addEventListener('click', () => {
+      editing = !editing;
+      cards.forEach(c => c.setAttribute('contenteditable', editing));
+      editBtn.textContent = editing ? '✅ Done' : '✏️ Edit';
+    });
+
+    saveBtn.addEventListener('click', () => {
+      const tl = document.getElementById('timeline');
+      localStorage.setItem('professional_experience_html', JSON.stringify(tl.outerHTML));
+      saveBtn.textContent = '✔ Saved';
+      setTimeout(()=> saveBtn.textContent='💾 Save', 1200);
+    });
+  </script>
+</body>
+</html>
