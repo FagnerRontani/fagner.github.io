@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - Remote Sensing Specialist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    :root{
+      --bg:#0b1324;
+      --panel:#0f1a2a;
+      --panel-2:#0b1626;
+      --text:#e5e7eb;
+      --accent:#34d399;
+    }
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 700px at 20% -10%, #11203b 0%, transparent 55%),
+        radial-gradient(900px 600px at 120% 10%, #0d1f3a 0%, transparent 50%),
+        var(--bg);
+      color:var(--text);
+    }
+    /* Topbar */
+    .topbar{position:sticky; top:0; z-index:40; background:rgba(11,19,36,.8); backdrop-filter:blur(10px); border-bottom:1px solid rgba(148,163,184,.12)}
+    .topbar-inner{max-width:1200px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:10px; color:var(--accent); font-weight:700}
+    .nav a{color:#c8f7e5; text-decoration:none; margin-left:18px; opacity:.9; font-size:.95rem}
+    .nav a:hover{opacity:1}
+
+    /* Hero */
+    .hero{padding:64px 20px 28px; border-bottom:1px solid rgba(148,163,184,.12)}
+    .hero-inner{max-width:1000px; margin:0 auto; text-align:center}
+    .hero h1{margin:8px 0 6px; font-size:2.6rem; color:var(--accent)}
+    .subtitle{max-width:820px; margin:0 auto; color:#c8f7e5; opacity:.95; line-height:1.6}
+    .cta{margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:14px; text-decoration:none; font-weight:600; border:1px solid rgba(148,163,184,.25)}
+    .btn.primary{background:var(--accent); color:#05251a; border-color:transparent}
+    .btn.ghost{background:transparent; color:#c8f7e5}
+
+    /* Layout */
+    .wrap{max-width:1200px; margin:32px auto; padding:0 20px}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:26px}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:26px}
+    .card{background:linear-gradient(180deg, var(--panel), var(--panel-2)); border-radius:28px; padding:28px; border:1px solid rgba(148,163,184,.12)}
+    .badge{width:74px; height:74px; border-radius:20px; margin:0 auto 14px; background:rgba(148,163,184,.08); border:1px solid rgba(148,163,184,.18); color:var(--accent); font-size:40px; display:flex; align-items:center; justify-content:center}
+    .text{color:#c8f7e5; font-size:1.05rem; line-height:1.7}
+    .section-title{color:var(--accent); text-align:center; margin:8px 0 18px; font-size:1.6rem; letter-spacing:.3px}
+
+    /* Footer */
+    footer{max-width:1200px; margin:40px auto 60px; color:#a9bdba; opacity:.9; text-align:center; font-size:.95rem}
+
+    /* Responsive */
+    @media (max-width:992px){ .grid3{grid-template-columns:1fr 1fr} }
+    @media (max-width:680px){ .hero{padding-top:44px} .hero h1{font-size:2.1rem} .grid3,.grid2{grid-template-columns:1fr} .nav{display:none} }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><i class="fas fa-satellite"></i> Fagner Rontani</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">Profile</a>
+        <a href="#toolbox">Toolbox</a>
+        <a href="#regions">Regions</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>About Me</h1>
+      <p class="subtitle">
+        Agronomist (M.Sc.) and Ph.D. student in Remote Sensing for Agriculture (NDSU).<br/>
+        I combine UAV & satellite imagery, RTK GNSS and geospatial analytics to deliver sustainable, data-driven decisions for modern agriculture.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#" onclick="alert('Add your CV link when ready.')" aria-label="Download CV">
+          <i class="fas fa-file-download"></i> Download CV
+        </a>
+        <a class="btn ghost" href="#about"><i class="fas fa-arrow-down"></i> Explore</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <!-- Profile (sem precisar editar) -->
+    <section id="about" aria-labelledby="about-title" style="margin-top:6px">
+      <h2 class="section-title" id="about-title">Profile</h2>
+
+      <div class="grid3">
+        <article class="card">
+          <div class="badge"><i class="fas fa-user-graduate"></i></div>
+          <p class="text">
+            Agronomist with a Master’s degree in Agronomy and current Ph.D. student in Remote Sensing for Agriculture at North Dakota State University. 
+            10+ years of academic and field experience in crop production, soil fertility, precision agriculture, and plant monitoring.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="badge"><i class="fas fa-satellite"></i></div>
+          <p class="text">
+            I work with multispectral sensors, UAVs, and RTK GNSS, turning drone & satellite imagery into actionable insights. 
+            Daily stack: Pix4D, QGIS, ArcGIS Pro, ENVI, spectral indices and raster analytics.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="badge"><i class="fas fa-chart-line"></i></div>
+          <p class="text">
+            Passionate about transforming agricultural challenges into sustainable, data-driven solutions by combining solid technical expertise with hands-on field knowledge to support smart farming and better decision-making.
+          </p>
+        </article>
+      </div>
+
+      <div class="grid2" style="margin-top:26px">
+        <article class="card">
+          <div class="badge"><i class="fas fa-globe-americas"></i></div>
+          <p class="text">
+            Regional experience in Brazil, the Southern United States (Louisiana), and the Northern Plains (North Dakota), adapting solutions to diverse soils and agroecosystems.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="badge"><i class="fas fa-leaf"></i></div>
+          <p class="text">
+            Research focus: integrating remote sensing with agronomy fundamentals to propose context-specific, sustainable recommendations for farmers and researchers.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Toolbox -->
+    <section id="toolbox" aria-labelledby="toolbox-title" style="margin-top:34px">
+      <h2 class="section-title" id="toolbox-title">Toolbox</h2>
+      <div class="grid3">
+        <article class="card">
+          <div class="badge"><i class="fas fa-camera"></i></div>
+          <p class="text">
+            Multispectral & RGB sensors • RTK/PPK GNSS • UAV operations (FAA Part 107) • Field scouting & ground truth.
+          </p>
+        </article>
+        <article class="card">
+          <div class="badge"><i class="fas fa-map-marked-alt"></i></div>
+          <p class="text">
+            Pix4D • Agisoft • QGIS • ArcGIS Pro • ENVI • Raster/Vector processing • Spectral indices (NDVI, GNDVI, etc.).
+          </p>
+        </article>
+        <article class="card">
+          <div class="badge"><i class="fas fa-database"></i></div>
+          <p class="text">
+            Data workflows • Python geospatial basics • Raster analytics • Reporting & decision support for growers and researchers.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Regions & Agroecosystems -->
+    <section id="regions" aria-labelledby="regions-title" style="margin-top:34px">
+      <h2 class="section-title" id="regions-title">Regions & Agroecosystems</h2>
+      <div class="grid2">
+        <article class="card">
+          <div class="badge"><i class="fas fa-flag"></i></div>
+          <p class="text">
+            Brazil • Southern U.S. (Louisiana) • Northern Plains (North Dakota). Experience across row crops and regional soil variability.
+          </p>
+        </article>
+        <article class="card">
+          <div class="badge"><i class="fas fa-leaf"></i></div>
+          <p class="text">
+            Sustainable, context-aware recommendations that merge agronomy and remote sensing for practical on-farm impact.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>Want to collaborate? Reach out at
+      <a href="mailto:fagnerrontani@example.com" style="color:#c8f7e5">fagnerrontani@example.com</a>
+    </p>
+    <p style="margin-top:6px; font-size:.9rem; opacity:.8">© <span id="year"></span> Fagner Rontani</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
