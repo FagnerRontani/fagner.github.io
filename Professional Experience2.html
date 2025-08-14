@@ -20,34 +20,29 @@
 
     *{box-sizing:border-box}
 
-    /* Não forçar height:100% e tratar overflow/fundo no <html> também */
+    /* Layout geral para evitar espaço no final */
     html, body{
       margin:0;
       padding:0;
-      overflow-x:hidden;
+      min-height:100dvh;
+      display:flex;
+      flex-direction:column;
       background:var(--bg);
+      overflow-x:hidden;
     }
 
-    /* Altura segura no mobile e evitar bounce que revela a barra */
     body{
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      /* >>> Opção A: fundo liso, sem gradiente no body <<< */
-      background: var(--bg);
       color:var(--text);
       line-height:1.6;
-      min-height:100svh;          /* iOS/Android modernos */
-      overscroll-behavior-y:none; /* reduz “bounce” do Safari */
-    }
-    @supports (height: 100dvh){
-      body{ min-height:100dvh; }  /* upgrade quando disponível */
+      overscroll-behavior-y:none;
     }
 
     .wrap{
       max-width:1100px;
       margin:32px auto;
-      padding:0 20px;
-      /* deixa um respiro interno sem duplicar safe-area com o footer */
-      padding-bottom: 20px;
+      padding:0 20px 20px;
+      flex:1; /* empurra o footer pro final */
     }
 
     .head{display:flex; align-items:center; gap:16px; margin-bottom:24px;}
@@ -93,10 +88,10 @@
     }
     .desc{margin-top:10px; color:#d8dee9}
 
-    /* Footer estilizado e com safe-area */
+    /* Footer ajustado */
     footer{
       max-width:1100px;
-      margin:40px auto 24px;
+      margin:20px auto;
       padding:0 20px max(8px, env(safe-area-inset-bottom));
       color:#a9bdba; opacity:.9; text-align:center; font-size:.95rem;
     }
@@ -203,7 +198,7 @@
   <!-- Footer -->
   <footer id="contact">
     <p>Want to collaborate? Reach out at
-      <a href="mailto:fagnerrontani@example.com01" style="color:#c8f7e5">fagnerrontani@example.com01</a>
+      <a href="mailto:fagnerrontani@example.com02" style="color:#c8f7e5">fagnerrontani@example.com02</a>
     </p>
     <p style="margin-top:6px; font-size:.9rem; opacity:.8">© <span id="year"></span> Fagner Rontani</p>
   </footer>
