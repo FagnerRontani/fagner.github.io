@@ -51,8 +51,8 @@
       max-width:1100px;
       margin:32px auto;
       padding:0 20px;
-      /* Evita “respiro” residual sobre a barra de gestos do iPhone */
-      padding-bottom: max(20px, env(safe-area-inset-bottom));
+      /* deixa um respiro interno sem duplicar safe-area com o footer */
+      padding-bottom: 20px;
     }
 
     .head{display:flex; align-items:center; gap:16px; margin-bottom:24px;}
@@ -97,6 +97,14 @@
       background:rgba(148,163,184,.08); border:1px solid rgba(148,163,184,.18);
     }
     .desc{margin-top:10px; color:#d8dee9}
+
+    /* Footer estilizado e com safe-area */
+    footer{
+      max-width:1100px;
+      margin:40px auto 24px;
+      padding:0 20px max(8px, env(safe-area-inset-bottom));
+      color:#a9bdba; opacity:.9; text-align:center; font-size:.95rem;
+    }
 
     @media (max-width:720px){
       .timeline:before{left:12px}
@@ -196,7 +204,17 @@
       </article>
     </section>
   </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>Want to collaborate? Reach out at
+      <a href="mailto:fagnerrontani@example.com" style="color:#c8f7e5">fagnerrontani@example.com</a>
+    </p>
+    <p style="margin-top:6px; font-size:.9rem; opacity:.8">© <span id="year"></span> Fagner Rontani</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
-
