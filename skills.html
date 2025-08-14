@@ -6,13 +6,13 @@
 <title>Skills — Fagner Rontani</title>
 <style>
   :root{
-    --bg:#0b1220;         /* fundo */
-    --card:#111a2b;       /* cartão */
-    --muted:#a8b3cf;      /* texto secundário */
-    --text:#e8eeff;       /* texto principal */
-    --accent:#39d98a;     /* verde agritech */
-    --accent-2:#4dabf7;   /* azul satélite */
-    --track:#243049;      /* trilho da barra */
+    --bg:#0b1220;
+    --card:#111a2b;
+    --muted:#a8b3cf;
+    --text:#e8eeff;
+    --accent:#39d98a;
+    --accent-2:#4dabf7;
+    --track:#243049;
     --radius:18px;
     --ring: 0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.35);
   }
@@ -36,13 +36,11 @@
     box-shadow: 0 0 0 2px rgba(255,255,255,.15)}
   .satellite::after{content:"";position:absolute;width:18px;height:2px;background:#bfe4ff;top:4px;left:-4px;opacity:.9}
   @keyframes orbit {to{transform:rotate(360deg)}}
-
   .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
   .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
     border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--ring);padding:18px}
   @media(min-width:900px){.lg-6{grid-column:span 6}.lg-12{grid-column:span 12}}
   h2{font-size:18px;margin:2px 0 14px;letter-spacing:.2px}
-
   .skill{display:grid;gap:8px;padding:12px;border-radius:14px;
     background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}
   .skill-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
@@ -109,6 +107,24 @@
           <div class="track"><div class="bar" style="--w:82%"></div></div>
           <div class="tagrow"><span class="tag">YOLO</span><span class="tag">Scikit-learn</span><span class="tag">TensorFlow/PyTorch (basics)</span></div>
         </div>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Teamwork and Collaboration</div><div class="skill-level">95%</div></div>
+          <div class="desc">Effective cooperation in multidisciplinary teams to achieve project goals.</div>
+          <div class="track"><div class="bar" style="--w:95%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Professionalism</div><div class="skill-level">92%</div></div>
+          <div class="desc">Commitment to ethical practices, quality standards, and accountability.</div>
+          <div class="track"><div class="bar" style="--w:92%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Professional Demeanor</div><div class="skill-level">90%</div></div>
+          <div class="desc">Maintaining a respectful, composed, and confident presence in professional environments.</div>
+          <div class="track"><div class="bar" style="--w:90%"></div></div>
+        </div>
       </section>
 
       <!-- SOFTWARE & TOOLS -->
@@ -142,12 +158,75 @@
           <div class="track"><div class="bar" style="--w:76%"></div></div>
           <div class="tagrow"><span class="tag">Matplotlib</span><span class="tag">Plotly</span><span class="tag">Map layouts</span></div>
         </div>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Genes (Statistical Software)</div><div class="skill-level">75%</div></div>
+          <div class="desc">Statistical analysis for agricultural research and experimental design.</div>
+          <div class="track"><div class="bar" style="--w:75%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">SigmaPlot</div><div class="skill-level">72%</div></div>
+          <div class="desc">Graph creation, statistical plots, and publication-ready figures.</div>
+          <div class="track"><div class="bar" style="--w:72%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Climate FieldView</div><div class="skill-level">78%</div></div>
+          <div class="desc">Crop monitoring, data layers, and field analytics for decision making.</div>
+          <div class="track"><div class="bar" style="--w:78%"></div></div>
+        </div>
+      </section>
+
+                 <!-- HEAVY MACHINERY OPERATION -->
+      <section class="card lg-12">
+        <h2>Heavy Machinery Operation</h2>
+        <div style="display:flex; gap:18px; flex-wrap:wrap;">
+          <div class="skill" style="flex:1; min-width:280px;">
+            <div class="skill-head"><div class="skill-name">Tractors</div><div class="skill-level">90%</div></div>
+            <div class="desc">Operation, field preparation, and precision agriculture integration (GPS/RTK guidance).</div>
+            <div class="track"><div class="bar" style="--w:90%"></div></div>
+            <div class="tagrow"><span class="tag">John Deere</span><span class="tag">Case IH</span><span class="tag">Autosteer</span></div>
+          </div>
+
+          <div class="skill" style="flex:1; min-width:280px;">
+            <div class="skill-head"><div class="skill-name">Combine Harvesters</div><div class="skill-level">85%</div></div>
+            <div class="desc">Harvest operations, yield monitoring, and machine calibration for data accuracy.</div>
+            <div class="track"><div class="bar" style="--w:85%"></div></div>
+            <div class="tagrow"><span class="tag">John Deere</span><span class="tag">Case IH</span><span class="tag">Yield maps</span></div>
+          </div>
+
+          <div class="skill" style="flex:1; min-width:280px;">
+            <div class="skill-head"><div class="skill-name">Sprayers</div><div class="skill-level">80%</div></div>
+            <div class="desc">Chemical applications, boom calibration, and precision targeting with variable-rate technology.</div>
+            <div class="track"><div class="bar" style="--w:80%"></div></div>
+            <div class="tagrow"><span class="tag">Self-propelled</span><span class="tag">Variable-rate</span><span class="tag">Nozzle control</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LANGUAGES -->
+      <section class="card lg-12">
+        <h2>Languages</h2>
+        <div class="grid" style="gap:18px">
+          <div class="skill lg-4">
+            <div class="skill-head"><div class="skill-name">English</div><div class="skill-level">90%</div></div>
+            <div class="track"><div class="bar" style="--w:90%"></div></div>
+          </div>
+          <div class="skill lg-4">
+            <div class="skill-head"><div class="skill-name">Spanish</div><div class="skill-level">65%</div></div>
+            <div class="track"><div class="bar" style="--w:65%"></div></div>
+          </div>
+          <div class="skill lg-4">
+            <div class="skill-head"><div class="skill-name">Portuguese</div><div class="skill-level">100%</div></div>
+            <div class="track"><div class="bar" style="--w:100%"></div></div>
+          </div>
+        </div>
       </section>
 
       <!-- SENSORS & FIELD INSTRUMENTATION -->
       <section class="card lg-12">
         <h2>Sensors & Field Instrumentation</h2>
-
         <div class="grid" style="gap:18px">
           <div class="skill lg-6">
             <div class="skill-head"><div class="skill-name">Multispectral Cameras & Calibration</div><div class="skill-level">84%</div></div>
