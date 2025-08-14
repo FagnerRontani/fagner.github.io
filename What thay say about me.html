@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>What they say about me — Fagner Rontani</title>
+<style>
+  :root{
+    --bg:#0b1220;         /* fundo */
+    --card:#111a2b;       /* cartão */
+    --muted:#a8b3cf;      /* texto secundário */
+    --text:#e8eeff;       /* texto principal */
+    --accent:#39d98a;     /* verde agritech */
+    --accent-2:#4dabf7;   /* azul satélite */
+    --track:#243049;      /* trilho/bordas */
+    --radius:18px;
+    --ring: 0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(1200px 600px at 90% -10%, #123 0%, transparent 70%), var(--bg);
+    color:var(--text);
+  }
+  .wrap{max-width:1100px;margin:28px auto 56px;padding:0 16px}
+  header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  h1{font-size:28px;margin:0}
+  p.lead{color:var(--muted);margin:6px 0 0;font-size:14px}
+
+  /* planeta + satélite */
+  .planet{width:42px;height:42px;border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, #7fd, #2aa 45%, #0a7 60%, #045);
+    box-shadow: 0 0 0 2px rgba(255,255,255,.05), 0 12px 30px rgba(0,0,0,.45);
+    position:relative}
+  .satellite{position:absolute;width:10px;height:10px;border-radius:2px;background:var(--accent-2);
+    top:-7px;left:50%;transform-origin:-60px 60px;animation:orbit 6s linear infinite;
+    box-shadow: 0 0 0 2px rgba(255,255,255,.15)}
+  .satellite::after{content:"";position:absolute;width:18px;height:2px;background:#bfe4ff;top:4px;left:-4px;opacity:.9}
+  @keyframes orbit {to{transform:rotate(360deg)}}
+
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+  .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+    border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--ring);padding:18px}
+
+  @media(min-width:900px){
+    .lg-6{grid-column:span 6}
+    .lg-12{grid-column:span 12}
+  }
+
+  h2{font-size:18px;margin:2px 0 14px;letter-spacing:.2px}
+  .muted{color:var(--muted)}
+
+  /* Testimonial */
+  .t{display:grid;gap:12px;padding:16px;border-radius:14px;
+     background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}
+  .thead{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
+  .person{display:flex;align-items:center;gap:12px}
+  .avatar{
+    width:40px;height:40px;border-radius:50%;
+    display:grid;place-items:center;font-weight:700;
+    background: radial-gradient(circle at 30% 30%, #1d7, #0a7 60%, #045);
+    color:#eafff6; letter-spacing:.5px
+  }
+  .name{font-weight:700}
+  .meta{font-size:13px;color:#cfe0ff}
+  .role-badge{font-size:12px;color:#9ec7ff;background:rgba(77,171,247,.1);
+    border:1px solid rgba(77,171,247,.35);padding:4px 10px;border-radius:999px}
+
+  .contact{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:13px}
+  .contact a{color:#9ec7ff;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.2)}
+  .contact a:hover{border-color:rgba(255,255,255,.5)}
+  .contact .sep{opacity:.4}
+
+  .quote{
+    position:relative;padding-left:18px;line-height:1.55;color:#e8eeff
+  }
+  .quote::before{
+    content:"“";position:absolute;left:0;top:-8px;font-size:28px;color:var(--accent-2);opacity:.8
+  }
+
+  .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+  .tag{font-size:12px;color:#b7c6e6;border:1px dashed rgba(255,255,255,.16);
+    padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.03)}
+  footer{margin-top:22px;color:var(--muted);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="planet"><div class="satellite"></div></div>
+      <div>
+        <h1>What they say about me</h1>
+        <p class="lead">Feedback from colleagues, advisors, and industry partners</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- INTRO -->
+      <section class="card lg-12">
+        <p class="muted">These are <b>example testimonials</b> (contacts included as placeholders). Replace names, quotes, e-mails and phone numbers with real information.</p>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="card lg-12">
+        <h2>Testimonials</h2>
+
+        <div class="grid" style="grid-template-columns:repeat(12,1fr);gap:18px">
+          <!-- PhD Student 1 -->
+          <article class="t lg-6">
+            <div class="thead">
+              <div class="person">
+                <div class="avatar">AM</div>
+                <div>
+                  <div class="name">Ana Marques</div>
+                  <div class="meta">Ph.D. Student · North Dakota State University</div>
+                </div>
+              </div>
+              <span class="role-badge">Ph.D. Student</span>
+            </div>
+            <div class="contact">
+              <a href="mailto:ana.marques@ndsu.edu" aria-label="Email Ana Marques">✉️ ana.marques@ndsu.edu</a>
+              <span class="sep">•</span>
+              <a href="tel:+1-555-014-2101" aria-label="Call Ana Marques">☎️ +1 (555) 014-2101</a>
+            </div>
+            <div class="quote">
+              Fagner turned complex UAV campaigns into smooth operations. His checklists and RTK workflow cut our rework to nearly zero and improved our dataset quality across the season.
+            </div>
+            <div class="tagrow">
+              <span class="tag">UAV Ops</span><span class="tag">RTK/GCP</span><span class="tag">Data quality</span>
+            </div>
+          </article>
+
+          <!-- PhD Student 2 -->
+          <article class="t lg-6">
+            <div class="thead">
+              <div class="person">
+                <div class="avatar">LP</div>
+                <div>
+                  <div class="name">Lucas Pereira</div>
+                  <div class="meta">Ph.D. Candidate · NDSU</div>
+                </div>
+              </div>
+              <span class="role-badge">Ph.D. Student</span>
+            </div>
+            <div class="contact">
+              <a href="mailto:lucas.pereira@ndsu.edu" aria-label="Email Lucas Pereira">✉️ lucas.pereira@ndsu.edu</a>
+              <span class="sep">•</span>
+              <a href="tel:+1-555-014-2102" aria-label="Call Lucas Pereira">☎️ +1 (555) 014-2102</a>
+            </div>
+            <div class="quote">
+              He is the teammate you want on field days—organized, safety-minded, and fast at troubleshooting sensors. Our weed-mapping study moved twice as fast with his support.
+            </div>
+            <div class="tagrow">
+              <span class="tag">Fieldwork</span><span class="tag">Sensors</span><span class="tag">Weed mapping</span>
+            </div>
+          </article>
+
+          <!-- Professor 1 -->
+          <article class="t lg-6">
+            <div class="thead">
+              <div class="person">
+                <div class="avatar">MC</div>
+                <div>
+                  <div class="name">Prof. Melissa Carter</div>
+                  <div class="meta">Professor · LSU AgCenter</div>
+                </div>
+              </div>
+              <span class="role-badge">Professor</span>
+            </div>
+            <div class="contact">
+              <a href="mailto:m.carter@lsuagcenter.edu" aria-label="Email Prof. Melissa Carter">✉️ m.carter@lsuagcenter.edu</a>
+              <span class="sep">•</span>
+              <a href="tel:+1-555-019-3011" aria-label="Call Prof. Melissa Carter">☎️ +1 (555) 019-3011</a>
+            </div>
+            <div class="quote">
+              Fagner combines agronomy and remote sensing with uncommon clarity. He delivers reproducible analyses and communicates results in a way growers and researchers both trust.
+            </div>
+            <div class="tagrow">
+              <span class="tag">Remote Sensing</span><span class="tag">Communication</span><span class="tag">Reproducibility</span>
+            </div>
+          </article>
+
+          <!-- Professor 2 -->
+          <article class="t lg-6">
+            <div class="thead">
+              <div class="person">
+                <div class="avatar">JS</div>
+                <div>
+                  <div class="name">Prof. João Silva</div>
+                  <div class="meta">Professor · UFSM (Brazil)</div>
+                </div>
+              </div>
+              <span class="role-badge">Professor</span>
+            </div>
+            <div class="contact">
+              <a href="mailto:joao.silva@ufsm.br" aria-label="Email Prof. João Silva">✉️ joao.silva@ufsm.br</a>
+              <span class="sep">•</span>
+              <a href="tel:+55-51-5555-1234" aria-label="Call Prof. João Silva">☎️ +55 (51) 5555-1234</a>
+            </div>
+            <div class="quote">
+              His experimental design and statistical rigor stand out. Fagner is dependable, proactive, and consistently elevates the quality of collaborative research.
+            </div>
+            <div class="tagrow">
+              <span class="tag">Experimental design</span><span class="tag">Statistics</span><span class="tag">Collaboration</span>
+            </div>
+          </article>
+
+          <!-- Industry -->
+          <article class="t lg-12">
+            <div class="thead">
+              <div class="person">
+                <div class="avatar">KT</div>
+                <div>
+                  <div class="name">Karen Thompson</div>
+                  <div class="meta">Operations Manager · GreenField Analytics</div>
+                </div>
+              </div>
+              <span class="role-badge">Industry</span>
+            </div>
+            <div class="contact">
+              <a href="mailto:karen.thompson@greenfieldanalytics.com" aria-label="Email Karen Thompson">✉️ karen.thompson@greenfieldanalytics.com</a>
+              <span class="sep">•</span>
+              <a href="tel:+1-555-019-7788" aria-label="Call Karen Thompson">☎️ +1 (555) 019-7788</a>
+            </div>
+            <div class="quote">
+              We partnered with Fagner to validate variable-rate prescriptions. He delivered clean datasets, clear documentation, and practical insights that our clients could act on immediately.
+            </div>
+            <div class="tagrow">
+              <span class="tag">Variable-rate</span><span class="tag">Documentation</span><span class="tag">Client impact</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      Tip: replace placeholders with real contacts. You can hide phone or e-mail by removing the corresponding <code>&lt;a&gt;</code>.
+    </footer>
+  </div>
+</body>
+</html>
