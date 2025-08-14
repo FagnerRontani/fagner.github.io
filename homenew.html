@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
   <title>Home - Remote Sensing Specialist</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" />
   <style>
-    :root {
+    :root{
       --bg:#0b1324;
       --panel:#0f1a2a;
       --panel-2:#0b1626;
@@ -14,27 +19,35 @@
       --accent:#34d399;
     }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background: var(--bg);
-  min-height: 100%;
-}
-@supports (height: 100dvh) {
-  body { min-height: 100dvh; }
-}
+    /* ==== RESET & MOBILE-SAFE ==== */
+    *{box-sizing:border-box}
+    html, body{
+      margin:0;
+      padding:0;
+    }
+    html{
+      background:var(--bg);     /* garante fundo também no <html> */
+      height:100%;
+      color-scheme:dark;
+    }
+    body{
+      min-height:100svh;        /* iOS/Android modernos */
+    }
+    @supports (height: 100dvh) {
+      body{ min-height:100dvh; } /* fallback/upgrade */
+    }
 
     html { scroll-behavior:smooth; }
-    body {
-      margin:0;
+    body{
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 700px at 20% -10%, #11203b 0%, transparent 55%),
-                  radial-gradient(900px 600px at 120% 10%, #0d1f3a 0%, transparent 50%),
-                  var(--bg);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, #11203b 0%, transparent 55%),
+        radial-gradient(900px 600px at 120% 10%, #0d1f3a 0%, transparent 50%),
+        var(--bg);
       color:var(--text);
     }
-    /* HERO */
+
+    /* ==== HERO ==== */
     .hero{
       position:relative;
       padding:64px 20px 40px;
@@ -45,76 +58,81 @@ html, body {
       border-bottom:1px solid rgba(148,163,184,.12);
     }
     .topbar{
-      max-width:1200px;margin:0 auto 24px;
-      display:flex;align-items:center;justify-content:space-between;
+      max-width:1200px; margin:0 auto 24px;
+      display:flex; align-items:center; justify-content:space-between;
     }
     .topbar .brand{
-      color:var(--accent);font-weight:700;font-size:1.05rem;display:flex;gap:10px;align-items:center;
+      color:var(--accent); font-weight:700; font-size:1.05rem; display:flex; gap:10px; align-items:center;
     }
     .topbar .links a{
-      color:#c8f7e5;text-decoration:none;margin-left:18px;font-size:.95rem;opacity:.9;
+      color:#c8f7e5; text-decoration:none; margin-left:18px; font-size:.95rem; opacity:.9;
     }
-    .topbar .links a:hover{opacity:1}
-    .hero-inner{
-      max-width:980px;margin:0 auto;text-align:center;
-    }
-    .hero h1{
-      margin:10px 0 10px;font-size:2.6rem;color:var(--accent);
-    }
+    .topbar .links a:hover{ opacity:1; }
+    .hero-inner{ max-width:980px; margin:0 auto; text-align:center; }
+    .hero h1{ margin:10px 0 10px; font-size:2.6rem; color:var(--accent); }
     .subtitle{
-      color:#c8f7e5;opacity:.95;font-size:1.15rem;line-height:1.6;max-width:820px;margin:0 auto 22px;
+      color:#c8f7e5; opacity:.95; font-size:1.15rem; line-height:1.6; max-width:820px; margin:0 auto 22px;
     }
-    .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+    .cta{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
     .btn{
-      display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;
-      text-decoration:none;font-weight:600;border:1px solid rgba(148,163,184,.25)
+      display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:14px;
+      text-decoration:none; font-weight:600; border:1px solid rgba(148,163,184,.25);
+      transition:transform .15s ease;
     }
-    .btn.primary{background:var(--accent);color:#05251a;border-color:transparent}
-    .btn.ghost{background:transparent;color:#c8f7e5}
-    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{ background:var(--accent); color:#05251a; border-color:transparent; }
+    .btn.ghost{ background:transparent; color:#c8f7e5; }
+    .btn:hover{ transform:translateY(-1px); }
     .scroll-hint{
-      display:inline-flex;align-items:center;justify-content:center;
-      width:46px;height:46px;margin:22px auto 0;border-radius:50%;
-      border:1px solid rgba(148,163,184,.25);color:#c8f7e5;text-decoration:none;opacity:.8
+      display:inline-flex; align-items:center; justify-content:center;
+      width:46px; height:46px; margin:22px auto 0; border-radius:50%;
+      border:1px solid rgba(148,163,184,.25); color:#c8f7e5; text-decoration:none; opacity:.8;
     }
-    .scroll-hint:hover{opacity:1}
+    .scroll-hint:hover{ opacity:1; }
+
     @media (max-width:768px){
-      .hero{padding-top:44px}
-      .hero h1{font-size:2.1rem}
-      .subtitle{font-size:1.05rem}
-      .topbar .links{display:none}
+      .hero{ padding-top:44px; }
+      .hero h1{ font-size:2.1rem; }
+      .subtitle{ font-size:1.05rem; }
+      .topbar .links{ display:none; }
     }
-    /* MAIN */
-    .wrap {max-width:1200px; margin:32px auto; padding:0 20px;}
-    .grid {
+
+    /* ==== MAIN ==== */
+    .wrap{ max-width:1200px; margin:32px auto; padding:0 20px; }
+    .grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:28px;
     }
-    .card {
-      background:linear-gradient(180deg,var(--panel),var(--panel-2));
+    .card{
+      background:linear-gradient(180deg, var(--panel), var(--panel-2));
       border-radius:28px;
       padding:32px 28px;
       text-align:center;
     }
-    .badge {
+    .badge{
       width:74px; height:74px; border-radius:20px; margin:0 auto 14px;
       background:rgba(148,163,184,.08);
       border:1px solid rgba(148,163,184,.18);
       color:var(--accent); font-size:40px;
       display:flex; align-items:center; justify-content:center;
     }
-    .text {color:#c8f7e5; font-size:20px; line-height:1.6}
-    @media (max-width:768px) {
-      .grid {grid-template-columns:1fr;}
+    .text{ color:#c8f7e5; font-size:20px; line-height:1.6; }
+
+    @media (max-width:768px){
+      .grid{ grid-template-columns:1fr; }
     }
+
+    /* ==== FOOTER (evita faixa branca) ==== */
     footer{
-      max-width:1200px;margin:40px auto 60px;color:#a9bdba;opacity:.9;text-align:center;font-size:.95rem
+      max-width:1200px;
+      margin:40px auto 24px;
+      padding:0 20px calc(env(safe-area-inset-bottom) + 8px);
+      color:#a9bdba; opacity:.9; text-align:center; font-size:.95rem;
     }
   </style>
 </head>
 <body>
-  <!-- ===== HERO / INÍCIO DA PÁGINA ===== -->
+  <!-- ===== HERO ===== -->
   <header class="hero">
     <nav class="topbar">
       <span class="brand"><i class="fas fa-satellite"></i> Fagner Rontani</span>
@@ -144,7 +162,7 @@ html, body {
       </a>
     </div>
   </header>
-  <!-- ===== FIM HERO ===== -->
+  <!-- ===== END HERO ===== -->
 
   <main class="wrap">
     <section id="cards" class="grid">
@@ -171,7 +189,9 @@ html, body {
   </main>
 
   <footer id="contact">
-    <p>Want to collaborate? Reach out at <a href="mailto:fagnerrontani@example.com" style="color:#c8f7e5">fagnerrontani@example.com</a></p>
+    <p>Want to collaborate? Reach out at
+      <a href="mailto:fagnerrontani@example.com" style="color:#c8f7e5">fagnerrontani@example.com</a>
+    </p>
   </footer>
 </body>
 </html>
