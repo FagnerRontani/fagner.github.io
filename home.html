@@ -2,14 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Home - Remote Sensing Specialist</title>
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" />
   <style>
     :root{
       --bg:#0b1324;
@@ -18,7 +13,6 @@
       --text:#e5e7eb;
       --accent:#34d399;
     }
-
     *{box-sizing:border-box}
     html, body{
       margin:0;
@@ -35,7 +29,6 @@
     @supports (height: 100dvh) {
       body{ min-height:100dvh; }
     }
-
     html { scroll-behavior:smooth; }
     body{
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -45,7 +38,6 @@
         var(--bg);
       color:var(--text);
     }
-
     .hero{
       position:relative;
       padding:64px 20px 40px;
@@ -86,14 +78,12 @@
       border:1px solid rgba(148,163,184,.25); color:#c8f7e5; text-decoration:none; opacity:.8;
     }
     .scroll-hint:hover{ opacity:1; }
-
     @media (max-width:768px){
       .hero{ padding-top:44px; }
       .hero h1{ font-size:2.1rem; }
       .subtitle{ font-size:1.05rem; }
       .topbar .links{ display:none; }
     }
-
     .wrap{ max-width:1200px; margin:32px auto; padding:0 20px; }
     .grid{
       display:grid;
@@ -114,11 +104,9 @@
       display:flex; align-items:center; justify-content:center;
     }
     .text{ color:#c8f7e5; font-size:20px; line-height:1.6; }
-
     @media (max-width:768px){
       .grid{ grid-template-columns:1fr; }
     }
-
     footer{
       max-width:1200px;
       margin:40px auto 24px;
@@ -136,13 +124,11 @@
         <a href="#contact">Contact</a>
       </div>
     </nav>
-
     <div class="hero-inner">
       <h1>Remote Sensing Specialist</h1>
       <p class="subtitle">
         Agronomy + Remote Sensing + Data. Practical solutions for crop monitoring and data-driven decisions.
       </p>
-
       <div class="cta">
         <a class="btn primary" href="#" onclick="alert('Add your CV link here!')">
           <i class="fas fa-file-alt"></i> Download CV
@@ -151,7 +137,6 @@
           <i class="fas fa-arrow-down"></i> See highlights
         </a>
       </div>
-
       <a class="scroll-hint" href="#cards" aria-label="Scroll to the cards">
         <i class="fas fa-angle-down"></i>
       </a>
@@ -160,7 +145,6 @@
 
   <main class="wrap">
     <section id="cards" class="grid">
-      <!-- Linha 1 -->
       <article class="card">
         <div class="badge"><i class="fas fa-tractor"></i></div>
         <p class="text">Agronomist with expertise in crop production, soil fertility, plant health, precision agriculture, and sustainable field solutions. My foundation in agronomy allows me to create tailored strategies for different agricultural systems.</p>
@@ -171,7 +155,6 @@
         <p class="text">Master's in Soil Fertility with research on cover crops, nutrient cycling, soil mapping, and precision agriculture. I developed methodologies to enhance nutrient management and improve crop yield efficiency.</p>
       </article>
 
-      <!-- Linha 2 -->
       <article class="card">
         <div class="badge"><i class="fas fa-satellite"></i></div>
         <p class="text">Ph.D. Student at North Dakota State University, focusing on remote sensing in agriculture using drones and satellites to improve crop monitoring and decision-making. I integrate advanced sensing tools with agronomic knowledge to address real-world farming challenges.</p>
@@ -182,37 +165,16 @@
         <p class="text">I combine solid field experience and academic training in agronomy, soil fertility, and remote sensing to develop integrated, technology-driven solutions for modern agriculture, supporting both farmers and research initiatives.</p>
       </article>
 
-      <!-- Linha extra 1 -->
+      <!-- NOVA SESSÃO 1 -->
       <article class="card">
         <div class="badge"><i class="fas fa-drone"></i></div>
-        <p class="text">Specialized in UAV operations for agricultural monitoring, including flight planning, multispectral imaging, and data processing workflows to support decision-making in precision farming.</p>
+        <p class="text">Drone pilot with expertise in GIS and mapping, delivering high-quality geospatial data for precision agriculture, land management, and crop monitoring projects.</p>
       </article>
 
-      <article class="card">
-        <div class="badge"><i class="fas fa-map-marked-alt"></i></div>
-        <p class="text">Experienced in GIS-based mapping for variable rate application, yield prediction, and crop health assessment, integrating spatial data into actionable farm strategies.</p>
-      </article>
-
-      <!-- Linha extra 2 -->
-      <article class="card">
-        <div class="badge"><i class="fas fa-microscope"></i></div>
-        <p class="text">Conducted laboratory analyses for soil and plant tissue, supporting research on nutrient deficiencies, fertilizer response, and plant stress indicators.</p>
-      </article>
-
-      <article class="card">
-        <div class="badge"><i class="fas fa-cloud"></i></div>
-        <p class="text">Leveraged cloud-based data processing platforms like Google Earth Engine for large-scale satellite image analysis and long-term crop monitoring.</p>
-      </article>
-
-      <!-- Linha extra 3 -->
-      <article class="card">
-        <div class="badge"><i class="fas fa-chart-line"></i></div>
-        <p class="text">Developed predictive models using machine learning to estimate crop yield, detect diseases, and optimize resource allocation across different agroecosystems.</p>
-      </article>
-
+      <!-- NOVA SESSÃO 2 -->
       <article class="card">
         <div class="badge"><i class="fas fa-handshake"></i></div>
-        <p class="text">Collaborated with farmers, researchers, and industry partners to implement innovative technologies in field trials and large-scale production systems.</p>
+        <p class="text">Experienced in collaborating with farmers and research teams to implement innovative agricultural technologies, integrating remote sensing insights into practical, on-farm solutions.</p>
       </article>
     </section>
   </main>
