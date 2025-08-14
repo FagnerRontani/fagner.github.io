@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Publications — Fagner Rontani</title>
+<style>
+  :root{
+    --bg:#0b1220;         /* fundo */
+    --card:#111a2b;       /* cartão */
+    --muted:#a8b3cf;      /* texto secundário */
+    --text:#e8eeff;       /* texto principal */
+    --accent:#39d98a;     /* verde agritech */
+    --accent-2:#4dabf7;   /* azul satélite */
+    --track:#243049;      /* trilho / bordas sutis */
+    --radius:18px;
+    --ring: 0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(1200px 600px at 90% -10%, #123 0%, transparent 70%), var(--bg);
+    color:var(--text);
+  }
+  .wrap{max-width:1100px;margin:28px auto 56px;padding:0 16px}
+  header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  h1{font-size:28px;margin:0}
+  p.lead{color:var(--muted);margin:6px 0 0;font-size:14px}
+  .planet{width:42px;height:42px;border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, #7fd, #2aa 45%, #0a7 60%, #045);
+    box-shadow: 0 0 0 2px rgba(255,255,255,.05), 0 12px 30px rgba(0,0,0,.45);
+    position:relative}
+  .satellite{position:absolute;width:10px;height:10px;border-radius:2px;background:var(--accent-2);
+    top:-7px;left:50%;transform-origin:-60px 60px;animation:orbit 6s linear infinite;
+    box-shadow: 0 0 0 2px rgba(255,255,255,.15)}
+  .satellite::after{content:"";position:absolute;width:18px;height:2px;background:#bfe4ff;top:4px;left:-4px;opacity:.9}
+  @keyframes orbit {to{transform:rotate(360deg)}}
+
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+  .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+    border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--ring);padding:18px}
+
+  @media(min-width:900px){
+    .lg-6{grid-column:span 6}
+    .lg-12{grid-column:span 12}
+  }
+
+  h2{font-size:18px;margin:2px 0 14px;letter-spacing:.2px}
+  .muted{color:var(--muted)}
+
+  /* PUBLICATION LIST */
+  .pub{display:grid;gap:8px;padding:14px;border-radius:14px;
+    background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}
+  .pub-head{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;justify-content:space-between}
+  .pub-title{font-weight:700;font-size:16px;line-height:1.35}
+  .pub-meta{color:#cfe0ff;font-size:13px}
+  .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .tag{font-size:12px;color:#b7c6e6;border:1px dashed rgba(255,255,255,.16);
+    padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.03)}
+  .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.03);color:#e8eeff;text-decoration:none;font-size:13px
+  }
+  .btn:hover{border-color:rgba(255,255,255,.25)}
+  .badge{font-size:12px;color:#9ec7ff;background:rgba(77,171,247,.1);border:1px solid rgba(77,171,247,.35);padding:3px 8px;border-radius:999px}
+  footer{margin-top:22px;color:var(--muted);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="planet"><div class="satellite"></div></div>
+      <div>
+        <h1>Publications</h1>
+        <p class="lead">Selected work in Precision Agriculture, Remote Sensing & Geospatial Analytics</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- INTRO -->
+      <section class="card lg-12">
+        <p class="muted">Below are <b>example entries</b> to illustrate layout and styling. Replace title/authors/links with your actual publications.</p>
+      </section>
+
+      <!-- PUBLICATION LIST -->
+      <section class="card lg-12">
+        <h2>Peer-reviewed & Conference</h2>
+
+        <!-- EXAMPLE 1 -->
+        <article class="pub">
+          <div class="pub-head">
+            <div class="pub-title">Multispectral UAV imagery for early weed detection in soybean</div>
+            <span class="badge">Journal · 2024</span>
+          </div>
+          <div class="pub-meta">A. Researcher, B. Scientist, <b>F. Rontani</b>. <i>Journal of Precision Agriculture</i>, 2024.</div>
+          <div class="tagrow">
+            <span class="tag">UAV</span><span class="tag">Weed mapping</span><span class="tag">NDVI/NDRE</span><span class="tag">Soybean</span>
+          </div>
+          <div class="btnrow">
+            <a class="btn" href="#" target="_blank" rel="noopener">📄 PDF</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">🔗 DOI/Link</a>
+          </div>
+        </article>
+
+        <!-- EXAMPLE 2 -->
+        <article class="pub">
+          <div class="pub-head">
+            <div class="pub-title">Comparing drone and satellite NDVI for nitrogen management in corn</div>
+            <span class="badge">Journal · 2023</span>
+          </div>
+          <div class="pub-meta">C. Analyst, <b>F. Rontani</b>, D. Agronomist. <i>Remote Sensing Applications: Society and Environment</i>, 2023.</div>
+          <div class="tagrow">
+            <span class="tag">NDVI</span><span class="tag">Corn</span><span class="tag">Nitrogen</span><span class="tag">Cross-platform</span>
+          </div>
+          <div class="btnrow">
+            <a class="btn" href="#" target="_blank" rel="noopener">📄 PDF</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">🔗 DOI/Link</a>
+          </div>
+        </article>
+
+        <!-- EXAMPLE 3 -->
+        <article class="pub">
+          <div class="pub-head">
+            <div class="pub-title">Real-time variable-rate spraying using machine-mounted sensors</div>
+            <span class="badge">Journal · 2025</span>
+          </div>
+          <div class="pub-meta"><b>F. Rontani</b>, E. Engineer, F. Agritech. <i>Computers and Electronics in Agriculture</i>, 2025.</div>
+          <div class="tagrow">
+            <span class="tag">Variable-rate</span><span class="tag">On-the-go sensing</span><span class="tag">Sprayers</span>
+          </div>
+          <div class="btnrow">
+            <a class="btn" href="#" target="_blank" rel="noopener">📄 PDF</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">🔗 DOI/Link</a>
+          </div>
+        </article>
+
+        <!-- EXAMPLE 4 -->
+        <article class="pub">
+          <div class="pub-head">
+            <div class="pub-title">YOLO-based detection of volunteer corn in sugarcane fields</div>
+            <span class="badge">Conference · 2024</span>
+          </div>
+          <div class="pub-meta">G. Vision, <b>F. Rontani</b>, H. Researcher. In: <i>IGARSS Proceedings</i>, 2024.</div>
+          <div class="tagrow">
+            <span class="tag">YOLO</span><span class="tag">Object detection</span><span class="tag">Sugarcane</span>
+          </div>
+          <div class="btnrow">
+            <a class="btn" href="#" target="_blank" rel="noopener">📄 PDF</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">🔗 Proceedings</a>
+          </div>
+        </article>
+
+        <!-- EXAMPLE 5 -->
+        <article class="pub">
+          <div class="pub-head">
+            <div class="pub-title">Benchmarking Micasense Altum PT and Sentera 65R for canopy metrics</div>
+            <span class="badge">Preprint · 2025</span>
+          </div>
+          <div class="pub-meta"><b>F. Rontani</b>, I. Analyst. <i>Preprint</i>, 2025.</div>
+          <div class="tagrow">
+            <span class="tag">Multispectral</span><span class="tag">Altum PT</span><span class="tag">Sentera 65R</span><span class="tag">Canopy metrics</span>
+          </div>
+          <div class="btnrow">
+            <a class="btn" href="#" target="_blank" rel="noopener">📄 PDF</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">🔗 Link</a>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <footer>
+      Tip: replace the <b>title</b>, <b>authors</b>, and buttons (PDF/DOI) with your actual publications. Duplicate a <code>&lt;article class="pub"&gt;</code> block to add more.
+    </footer>
+  </div>
+</body>
+</html>
