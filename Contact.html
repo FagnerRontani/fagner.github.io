@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact — Fagner Rontani</title>
+<style>
+  :root{
+    --bg:#0b1220;         /* fundo */
+    --card:#111a2b;       /* cartão */
+    --muted:#a8b3cf;      /* texto secundário */
+    --text:#e8eeff;       /* texto principal */
+    --accent:#39d98a;     /* verde agritech */
+    --accent-2:#4dabf7;   /* azul satélite */
+    --track:#243049;      /* linhas sutis */
+    --radius:18px;
+    --ring: 0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(1200px 600px at 90% -10%, #123 0%, transparent 70%), var(--bg);
+    color:var(--text);
+  }
+  .wrap{max-width:1100px;margin:28px auto 56px;padding:0 16px}
+  header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  h1{font-size:28px;margin:0}
+  p.lead{color:var(--muted);margin:6px 0 0;font-size:14px}
+
+  /* planeta + satélite */
+  .planet{width:42px;height:42px;border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, #7fd, #2aa 45%, #0a7 60%, #045);
+    box-shadow: 0 0 0 2px rgba(255,255,255,.05), 0 12px 30px rgba(0,0,0,.45);
+    position:relative}
+  .satellite{position:absolute;width:10px;height:10px;border-radius:2px;background:var(--accent-2);
+    top:-7px;left:50%;transform-origin:-60px 60px;animation:orbit 6s linear infinite;
+    box-shadow: 0 0 0 2px rgba(255,255,255,.15)}
+  .satellite::after{content:"";position:absolute;width:18px;height:2px;background:#bfe4ff;top:4px;left:-4px;opacity:.9}
+  @keyframes orbit {to{transform:rotate(360deg)}}
+
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+  .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+    border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--ring);padding:18px}
+
+  @media(min-width:900px){
+    .lg-6{grid-column:span 6}
+    .lg-12{grid-column:span 12}
+  }
+
+  h2{font-size:18px;margin:2px 0 14px;letter-spacing:.2px}
+  .muted{color:var(--muted)}
+
+  /* Icon grid */
+  .icon-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  @media(max-width:680px){
+    .icon-grid{grid-template-columns:1fr;gap:16px}
+  }
+  .iconlink{
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+    padding:18px;border-radius:16px;text-decoration:none;color:var(--text);
+    background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);
+    box-shadow:var(--ring);transition:transform .2s ease, border-color .2s ease, background .2s ease;
+  }
+  .iconlink:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.04)}
+  .icon-bubble{
+    width:82px;height:82px;border-radius:50%;
+    display:grid;place-items:center;
+    background: radial-gradient(circle at 30% 30%, var(--accent-2), #2b75d1 60%, #1a2f55);
+    box-shadow: 0 6px 18px rgba(0,0,0,.35), inset 0 0 0 2px rgba(255,255,255,.08);
+  }
+  .icon-bubble svg{width:40px;height:40px;fill:#eaf3ff}
+  .icon-title{font-weight:700}
+  .icon-sub{font-size:13px;color:#cfe0ff;text-align:center;word-break:break-word}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="planet"><div class="satellite"></div></div>
+      <div>
+        <h1>Contact</h1>
+        <p class="lead">Let’s connect — choose your preferred way to reach me below</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- ICONS -->
+      <section class="card lg-12">
+        <div class="icon-grid">
+
+          <!-- LinkedIn -->
+          <a class="iconlink" href="https://www.linkedin.com/in/engenheiro-agronomo-fagner-rontani/" target="_blank" rel="noopener" aria-label="Open LinkedIn profile">
+            <div class="icon-bubble" aria-hidden="true">
+              <!-- LinkedIn SVG -->
+              <svg viewBox="0 0 24 24" role="img" aria-label="LinkedIn icon">
+                <path d="M20.45 20.45h-3.55v-5.59c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.68H9.37V9h3.4v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.44v6.29ZM5.34 7.44a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45Z"/>
+              </svg>
+            </div>
+            <div class="icon-title">LinkedIn</div>
+            <div class="icon-sub">Agronomy + Remote sensing</div>
+          </a>
+
+          <!-- Phone -->
+          <a class="iconlink" href="tel:+12252842872" aria-label="Call phone number">
+            <div class="icon-bubble" aria-hidden="true" style="background: radial-gradient(circle at 30% 30%, var(--accent), #1a9f6d 60%, #0d3a2c);">
+              <!-- Phone SVG -->
+              <svg viewBox="0 0 24 24" role="img" aria-label="Phone icon">
+                <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C10.3 21.01 3 13.71 3 4.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21Z"/>
+              </svg>
+            </div>
+            <div class="icon-title">Phone</div>
+            <div class="icon-sub">(225) 284-2872</div>
+          </a>
+
+          <!-- Email -->
+          <a class="iconlink" href="mailto:Fagner.rontani@ndsu.edu" aria-label="Send email">
+            <div class="icon-bubble" aria-hidden="true" style="background: radial-gradient(circle at 30% 30%, #8aa3ff, #4d6af7 60%, #17244d);">
+              <!-- Email SVG -->
+              <svg viewBox="0 0 24 24" role="img" aria-label="Email icon">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
+              </svg>
+            </div>
+            <div class="icon-title">Email</div>
+            <div class="icon-sub">Fagner.rontani@ndsu.edu</div>
+          </a>
+
+        </div>
+      </section>
+    </div>
+
+    <footer>
+    </footer>
+  </div>
+</body>
+</html>
