@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Skills — Fagner Rontani</title>
+<style>
+  :root{
+    --bg:#0b1220;         /* fundo */
+    --card:#111a2b;       /* cartão */
+    --muted:#a8b3cf;      /* texto secundário */
+    --text:#e8eeff;       /* texto principal */
+    --accent:#39d98a;     /* verde agritech */
+    --accent-2:#4dabf7;   /* azul satélite */
+    --track:#243049;      /* trilho da barra */
+    --radius:18px;
+    --ring: 0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(1200px 600px at 90% -10%, #123 0%, transparent 70%), var(--bg);
+    color:var(--text);
+  }
+  .wrap{max-width:1100px;margin:28px auto 56px;padding:0 16px}
+  header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  h1{font-size:28px;margin:0}
+  p.lead{color:var(--muted);margin:6px 0 0;font-size:14px}
+  .planet{width:42px;height:42px;border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, #7fd, #2aa 45%, #0a7 60%, #045);
+    box-shadow: 0 0 0 2px rgba(255,255,255,.05), 0 12px 30px rgba(0,0,0,.45);
+    position:relative}
+  .satellite{position:absolute;width:10px;height:10px;border-radius:2px;background:var(--accent-2);
+    top:-7px;left:50%;transform-origin:-60px 60px;animation:orbit 6s linear infinite;
+    box-shadow: 0 0 0 2px rgba(255,255,255,.15)}
+  .satellite::after{content:"";position:absolute;width:18px;height:2px;background:#bfe4ff;top:4px;left:-4px;opacity:.9}
+  @keyframes orbit {to{transform:rotate(360deg)}}
+
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+  .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+    border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--ring);padding:18px}
+  @media(min-width:900px){.lg-6{grid-column:span 6}.lg-12{grid-column:span 12}}
+  h2{font-size:18px;margin:2px 0 14px;letter-spacing:.2px}
+  .muted{color:var(--muted)}
+
+  /* blocos de skill (já existentes) */
+  .skill{display:grid;gap:8px;padding:12px;border-radius:14px;
+    background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}
+  .skill-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+  .skill-name{font-weight:600}
+  .skill-level{font-variant-numeric:tabular-nums;color:#cfe6ff}
+  .desc{color:var(--muted);font-size:13px;line-height:1.45}
+  .track{width:100%;height:12px;background:var(--track);border-radius:999px;overflow:hidden;
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.25)}
+  .bar{
+    height:100%;
+    width:var(--w,0%);
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    border-radius:999px;
+    transform-origin:left;
+    transform:scaleX(0);
+    animation:fill 1.2s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  @keyframes fill {to{transform:scaleX(1)}}
+  .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .tag{font-size:12px;color:#b7c6e6;border:1px dashed rgba(255,255,255,.16);
+    padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.03)}
+
+  /* blocos informativos (Membership / Licenses) */
+  .info{display:grid;gap:10px;padding:14px;border-radius:14px;
+    background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}
+  .info-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .info-title{font-weight:700;line-height:1.35}
+  .badge{
+    font-size:12px;color:#9ec7ff;background:rgba(77,171,247,.1);
+    border:1px solid rgba(77,171,247,.35);padding:4px 10px;border-radius:999px;white-space:nowrap
+  }
+
+  footer{margin-top:22px;color:var(--muted);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="planet"><div class="satellite"></div></div>
+      <div>
+        <h1>Skills & Proficiency</h1>
+        <p class="lead">Precision Agriculture • Remote Sensing • GIS • ML • UAV Ops</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- TECHNICAL SKILLS -->
+      <section class="card lg-6">
+        <h2>Technical Skills</h2>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Remote Sensing for Agriculture</div><div class="skill-level">90%</div></div>
+          <div class="desc">Spectral indices (NDVI/NDRE), canopy metrics, multi-temporal analysis and agronomic interpretation.</div>
+          <div class="track"><div class="bar" style="--w:90%"></div></div>
+          <div class="tagrow"><span class="tag">Multispectral & RGB</span><span class="tag">Calibration</span><span class="tag">Zonal stats</span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">UAV Flight & Data Collection (Part 107)</div><div class="skill-level">85%</div></div>
+          <div class="desc">Mission planning, GSD optimization, RTK workflows, safety & compliance for research and commercial ops.</div>
+          <div class="track"><div class="bar" style="--w:85%"></div></div>
+          <div class="tagrow"><span class="tag">DJI Mavic 3M</span><span class="tag">RTK</span><span class="tag">Checklists</span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Photogrammetry & 3D Mapping</div><div class="skill-level">78%</div></div>
+          <div class="desc">Orthomosaics, DEM/DSM, accuracy checks, ground control and radiometric alignment.</div>
+          <div class="track"><div class="bar" style="--w:78%"></div></div>
+          <div class="tagrow"><span class="tag">Pix4D</span><span class="tag">Agisoft Metashape</span><span class="tag">P1 / Sony a6100</span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Machine Learning (YOLO, RF)</div><div class="skill-level">82%</div></div>
+          <div class="desc">Weed mapping, model training/validation, mAP/F1, dataset curation and augmentation.</div>
+          <div class="track"><div class="bar" style="--w:82%"></div></div>
+          <div class="tagrow"><span class="tag">YOLO</span><span class="tag">Scikit-learn</span><span class="tag">TensorFlow/PyTorch (basics)</span></div>
+        </div>
+
+        <!-- NEW TECHNICAL BLOCKS -->
+        <div class="skill">
+          <div class="skill-head">
+            <div class="skill-name">Experimental Design & Statistics</div>
+            <div class="skill-level">84%</div>
+          </div>
+          <div class="desc">Planning and analysis of field trials (RCBD/Factorial), ANOVA, contrasts, power analysis and control of field variability.</div>
+          <div class="track"><div class="bar" style="--w:84%"></div></div>
+          <div class="tagrow"><span class="tag">RCBD</span><span class="tag">ANOVA</span><span class="tag">Power analysis</span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head">
+            <div class="skill-name">Agronomic Diagnostics & Prescriptions</div>
+            <div class="skill-level">80%</div>
+          </div>
+          <div class="desc">Remote-sensing driven diagnosis (indices/spectra), agronomic interpretation, and variable-rate prescription maps with robust thresholds.</div>
+          <div class="track"><div class="bar" style="--w:80%"></div></div>
+          <div class="tagrow"><span class="tag">Nutrient stress</span><span class="tag">VRA maps</span><span class="tag">Thresholds</span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head">
+            <div class="skill-name">RTK Survey & Ground Control</div>
+            <div class="skill-level">81%</div>
+          </div>
+          <div class="desc">GCP layout and capture, base/rover setup, RTK/PPK logs, checkpoints and accuracy reporting for reliable mapping.</div>
+          <div class="track"><div class="bar" style="--w:81%"></div></div>
+          <div class="tagrow">
+            <span class="tag">GCPs</span>
+            <span class="tag">Checkpoints</span>
+            <span class="tag">RTK/PPK</span>
+            <span class="tag">Accuracy report</span>
+          </div>
+        </div>
+
+        <!-- PROFESSIONAL/TEAMWORK -->
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Teamwork and Collaboration</div><div class="skill-level">95%</div></div>
+          <div class="desc">Effective cooperation in multidisciplinary teams to achieve project goals.</div>
+          <div class="track"><div class="bar" style="--w:95%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Professionalism</div><div class="skill-level">92%</div></div>
+          <div class="desc">Commitment to ethical practices, quality standards, and accountability.</div>
+          <div class="track"><div class="bar" style="--w:92%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Professional Demeanor</div><div class="skill-level">90%</div></div>
+          <div class="desc">Maintaining a respectful, composed, and confident presence in professional environments.</div>
+          <div class="track"><div class="bar" style="--w:90%"></div></div>
+        </div>
+      </section>
+
+      <!-- SOFTWARE & TOOLS -->
+      <section class="card lg-6">
+        <h2>Software & Tools</h2>
+
+        <!-- QGIS -->
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">QGIS</div><div class="skill-level">88%</div></div>
+          <div class="desc">Vector/raster workflows, geoprocessing, plugins, field data integration and map production.</div>
+          <div class="track"><div class="bar" style="--w:88%"></div></div>
+          <div class="tagrow"><span class="tag">Processing Modeler</span><span class="tag">Field Calculator</span><span class="tag">GDAL</span></div>
+        </div>
+
+        <!-- ArcGIS Pro -->
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">ArcGIS Pro</div><div class="skill-level">82%</div></div>
+          <div class="desc">Geoprocessing, spatial analytics, layouts, geodatabases e integração com ArcGIS Online.</div>
+          <div class="track"><div class="bar" style="--w:82%"></div></div>
+          <div class="tagrow"><span class="tag">Toolboxes</span><span class="tag">ModelBuilder</span><span class="tag">Layouts</span></div>
+        </div>
+
+        <!-- Pix4D Mapper & Pix4Dfields -->
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Pix4D Mapper & Pix4Dfields</div><div class="skill-level">80%</div></div>
+          <div class="desc">Fotogrametria, geração de ortomosaicos/DSM e análises agronômicas rápidas em campo.</div>
+          <div class="track"><div class="bar" style="--w:80%"></div></div>
+          <div class="tagrow"><span class="tag">Tie points</span><span class="tag">Radiometric corr.</span><span class="tag">Zonal NDVI</span></div>
+        </div>
+
+        <!-- ENVI -->
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">ENVI</div><div class="skill-level">72%</div></div>
+          <div class="desc">Processamento espectral, band math, índices de vegetação e extração/classificação de feições.</div>
+          <div class="track"><div class="bar" style="--w:72%"></div></div>
+          <div class="tagrow"><span class="tag">Band Math</span><span class="tag">Spectral Indices</span><span class="tag">Classification</span></div>
+        </div>
+
+        <!-- Python -->
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Python for Geospatial</div><div class="skill-level">80%</div></div>
+          <div class="desc">Numpy/pandas, rasterio, geopandas, plotting e automação para tarefas agro/RS.</div>
+          <div class="track"><div class="bar" style="--w:80%"></div></div>
+          <div class="tagrow"><span class="tag">pandas</span><span class="tag">geopandas</span><span class="tag">rasterio</span></div>
+        </div>
+
+        <!-- GEE -->
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Google Earth Engine</div><div class="skill-level">70%</div></div>
+          <div class="desc">Séries temporais, cloud masking, pipelines de índices e exports para monitoramento de talhões.</div>
+          <div class="track"><div class="bar" style="--w:70%"></div></div>
+          <div class="tagrow"><span class="tag">Sentinel/Landsat</span><span class="tag">Reducers</span><span class="tag">Exports</span></div>
+        </div>
+
+        <!-- Data Viz -->
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Data Visualization & Reporting</div><div class="skill-level">76%</div></div>
+          <div class="desc">Dashboards, gráficos e mapas para growers e stakeholders de pesquisa.</div>
+          <div class="track"><div class="bar" style="--w:76%"></div></div>
+          <div class="tagrow"><span class="tag">Matplotlib</span><span class="tag">Plotly</span><span class="tag">Map layouts</span></div>
+        </div>
+
+        <!-- Genes -->
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Genes (Statistical Software)</div><div class="skill-level">75%</div></div>
+          <div class="desc">Análises estatísticas para experimentação agrícola e delineamentos.</div>
+          <div class="track"><div class="bar" style="--w:75%"></div></div>
+        </div>
+
+        <!-- SigmaPlot -->
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">SigmaPlot</div><div class="skill-level">72%</div></div>
+          <div class="desc">Criação de gráficos, plots estatísticos e figuras para publicação.</div>
+          <div class="track"><div class="bar" style="--w:72%"></div></div>
+        </div>
+
+        <!-- Climate FieldView -->
+        <div class="skill">
+          <div class="skill-head"><div class="skill-name">Climate FieldView</div><div class="skill-level">78%</div></div>
+          <div class="desc">Monitoramento de safra, camadas de dados e análises de campo para tomada de decisão.</div>
+          <div class="track"><div class="bar" style="--w:78%"></div></div>
+        </div>
+      </section>
+
+      <!-- HEAVY MACHINERY OPERATION -->
+      <section class="card lg-12">
+        <h2>Heavy Machinery Operation</h2>
+        <div style="display:flex; gap:18px; flex-wrap:wrap;">
+          <div class="skill" style="flex:1; min-width:280px;">
+            <div class="skill-head"><div class="skill-name">Tractors</div><div class="skill-level">90%</div></div>
+            <div class="desc">Operation, field preparation, and precision agriculture integration (GPS/RTK guidance).</div>
+            <div class="track"><div class="bar" style="--w:90%"></div></div>
+            <div class="tagrow"><span class="tag">John Deere</span><span class="tag">Case IH</span><span class="tag">Autosteer</span></div>
+          </div>
+
+          <div class="skill" style="flex:1; min-width:280px;">
+            <div class="skill-head"><div class="skill-name">Combine Harvesters</div><div class="skill-level">85%</div></div>
+            <div class="desc">Harvest operations, yield monitoring, and machine calibration for data accuracy.</div>
+            <div class="track"><div class="bar" style="--w:85%"></div></div>
+            <div class="tagrow"><span class="tag">John Deere</span><span class="tag">Case IH</span><span class="tag">Yield maps</span></div>
+          </div>
+
+          <div class="skill" style="flex:1; min-width:280px;">
+            <div class="skill-head"><div class="skill-name">Sprayers</div><div class="skill-level">80%</div></div>
+            <div class="desc">Chemical applications, boom calibration, and precision targeting with variable-rate technology.</div>
+            <div class="track"><div class="bar" style="--w:80%"></div></div>
+            <div class="tagrow"><span class="tag">Self-propelled</span><span class="tag">Variable-rate</span><span class="tag">Nozzle control</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LANGUAGES -->
+      <section class="card lg-12">
+        <h2>Languages</h2>
+        <div class="grid" style="gap:18px">
+          <div class="skill lg-4">
+            <div class="skill-head"><div class="skill-name">English</div><div class="skill-level">90%</div></div>
+            <div class="track"><div class="bar" style="--w:90%"></div></div>
+          </div>
+          <div class="skill lg-4">
+            <div class="skill-head"><div class="skill-name">Spanish</div><div class="skill-level">65%</div></div>
+            <div class="track"><div class="bar" style="--w:65%"></div></div>
+          </div>
+          <div class="skill lg-4">
+            <div class="skill-head"><div class="skill-name">Portuguese</div><div class="skill-level">100%</div></div>
+            <div class="track"><div class="bar" style="--w:100%"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SENSORS & FIELD INSTRUMENTATION -->
+      <section class="card lg-12">
+        <h2>Sensors & Field Instrumentation</h2>
+        <div class="grid" style="gap:18px">
+          <div class="skill lg-6">
+            <div class="skill-head"><div class="skill-name">Multispectral Cameras & Calibration</div><div class="skill-level">84%</div></div>
+            <div class="desc">From panel to reflectance, consistent mosaics across flights and dates.</div>
+            <div class="track"><div class="bar" style="--w:84%"></div></div>
+            <div class="tagrow"><span class="tag">Sentera 65R</span><span class="tag">Micasense Altum PT</span><span class="tag">Sun sensor</span></div>
+          </div>
+
+          <div class="skill lg-6">
+            <div class="skill-head"><div class="skill-name">Machinery-Mounted Sensors</div><div class="skill-level">74%</div></div>
+            <div class="desc">On-the-go sensing and variable-rate support (e.g., N management with real-time readings).</div>
+            <div class="track"><div class="bar" style="--w:74%"></div></div>
+            <div class="tagrow"><span class="tag">Augmenta</span><span class="tag">Rate maps</span><span class="tag">QA/QC</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEMBERSHIP (novo) -->
+      <section class="card lg-12">
+        <h2>Membership in professional societies</h2>
+        <div class="info">
+          <div class="info-head">
+            <div class="info-title">American Society of Agronomy (ASA); Crop Science Society of America (CSSA); Soil Science Society of America (SSSA)</div>
+            <span class="badge">Member</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- LICENSES (novo) -->
+      <section class="card lg-12">
+        <h2>Licenses</h2>
+
+        <div class="info">
+          <div class="info-head">
+            <div class="info-title">FAA Part 107 — Remote Pilot (sUAS)</div>
+            <span class="badge">United States</span>
+          </div>
+          <div class="muted">Status: Active.</div>
+          <div class="tagrow"><span class="tag">Drone Pilot</span><span class="tag">Remote ID / NPRM</span></div>
+        </div>
+
+        <div class="info">
+          <div class="info-head">
+            <div class="info-title">Louisiana Commercial Pesticide Applicator — Categories 1 & 10</div>
+            <span class="badge">Louisiana Dept. of Agriculture & Forestry</span>
+          </div>
+          <div class="muted">ID: 004MH7 · Categories: 1 (Agricultural Pest Control) & 10 (Demonstration & Research) · Expiration: 12/31/2024 · Recertify by: 05/29/2027.</div>
+          <div class="tagrow"><span class="tag">Chemicals</span><span class="tag">Applicator</span></div>
+        </div>
+
+        <div class="info">
+          <div class="info-head">
+            <div class="info-title">Driver’s Licenses — United States; Brazil (Category AD)</div>
+            <span class="badge">License</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      Tip: edit the percentages by changing the <b>--w</b> value (e.g., <code>style="--w:85%"</code>).
+    </footer>
+  </div>
+</body>
+</html>
