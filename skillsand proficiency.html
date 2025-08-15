@@ -17,7 +17,7 @@
     --ring: 0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.35);
   }
   *{box-sizing:border-box}
-  html, body { overflow-x:hidden; } /* evita "flutuar" pro lado */
+  html, body { overflow-x:hidden; }
   body{
     margin:0;
     font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
@@ -40,11 +40,7 @@
   @keyframes orbit {to{transform:rotate(360deg)}}
 
   /* ===== GRID BASE ===== */
-  .grid{
-    display:grid;
-    gap:18px;
-    grid-template-columns:repeat(12, minmax(0,1fr)); /* previne overflow */
-  }
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(12, minmax(0,1fr));}
   .card{
     grid-column:span 12;
     background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
@@ -52,13 +48,10 @@
     border-radius:var(--radius);
     box-shadow:var(--ring);
     padding:18px;
-    min-width:0; /* evita estourar colunas */
+    min-width:0;
   }
-
-  /* Por padrão, QUALQUER item direto de .grid ocupa toda a largura no mobile */
   .grid > * { grid-column: span 12; }
 
-  /* Quebras responsivas para utilitários lg-* */
   @media(min-width:900px){
     .lg-4{grid-column:span 4}
     .lg-6{grid-column:span 6}
@@ -70,57 +63,45 @@
   .skill{
     display:grid;gap:8px;padding:12px;border-radius:14px;
     background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);
-    min-width:0; /* evita overflow por conteúdo */
+    min-width:0;
   }
   .skill-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;min-width:0}
   .skill-name{font-weight:600; overflow-wrap:anywhere}
   .skill-level{font-variant-numeric:tabular-nums;color:#cfe6ff;flex:0 0 auto}
   .desc{color:var(--muted);font-size:13px;line-height:1.45;overflow-wrap:anywhere}
-  .track{width:100%;height:12px;background:var(--track);border-radius:999px;overflow:hidden;
-    box-shadow:inset 0 1px 1px rgba(0,0,0,.25)}
-  .bar{
-    height:100%;
-    width:var(--w,0%);
-    background:linear-gradient(90deg,var(--accent),var(--accent-2));
-    border-radius:999px;
-    transform-origin:left;
-    transform:scaleX(0);
-    animation:fill 1.2s cubic-bezier(.2,.7,.2,1) forwards;
-  }
+  .track{width:100%;height:12px;background:var(--track);border-radius:999px;overflow:hidden;box-shadow:inset 0 1px 1px rgba(0,0,0,.25)}
+  .bar{height:100%;width:var(--w,0%);background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:999px;transform-origin:left;transform:scaleX(0);animation:fill 1.2s cubic-bezier(.2,.7,.2,1) forwards;}
   @keyframes fill {to{transform:scaleX(1)}}
 
   .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-  .tag{font-size:12px;color:#b7c6e6;border:1px dashed rgba(255,255,255,.16);
-    padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.03);overflow-wrap:anywhere}
+  .tag{font-size:12px;color:#b7c6e6;border:1px dashed rgba(255,255,255,.16);padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.03);overflow-wrap:anywhere}
+
+  /* pills (badges) */
+  .badge{
+    font-size:12px;color:#9ec7ff;background:rgba(77,171,247,.1);
+    border:1px solid rgba(77,171,247,.35);
+    padding:3px 8px;border-radius:999px;flex:0 0 auto;
+  }
 
   footer{margin-top:22px;color:var(--muted);font-size:12px;text-align:center}
 
-  /* ===== SEÇÕES ESPECÍFICAS ===== */
+  /* seções específicas */
+  .mach-row{display:flex; gap:18px; flex-wrap:wrap; align-items:stretch;}
+  .mach-row .skill{flex:1 1 320px;min-width:0;}
+  @media(max-width:600px){ .mach-row{flex-direction:column} .mach-row .skill{flex-basis:auto;width:100%} }
 
-  /* Heavy Machinery como flex com fallback responsivo */
-  .mach-row{
-    display:flex; gap:18px; flex-wrap:wrap;
-    align-items:stretch;
-  }
-  .mach-row .skill{
-    flex:1 1 320px;  /* cresce, encolhe, base 320px */
-    min-width:0;     /* evita overflow no mobile */
-  }
-  @media(max-width:600px){
-    .mach-row{flex-direction:column}
-    .mach-row .skill{flex-basis:auto;width:100%}
-  }
-
-  /* Languages: 1 col mobile, 3 col >= 900px */
   .lang-grid > .skill{ grid-column:span 12; }
-  @media(min-width:900px){
-    .lang-grid > .skill{ grid-column:span 4; }
-  }
+  @media(min-width:900px){ .lang-grid > .skill{ grid-column:span 4; } }
 
-  /* Sensors: 1 col mobile, 2 col >= 900px */
   .sensor-grid > .skill{ grid-column:span 12; }
-  @media(min-width:900px){
-    .sensor-grid > .skill{ grid-column:span 6; }
+  @media(min-width:900px){ .sensor-grid > .skill{ grid-column:span 6; } }
+
+  /* ===== NEW: footer card inside grid ===== */
+  .footer-card{
+    padding:12px 0;
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
   }
 </style>
 </head>
@@ -167,43 +148,27 @@
           <div class="tagrow"><span class="tag">YOLO</span><span class="tag">Scikit-learn</span><span class="tag">TensorFlow/PyTorch (basics)</span></div>
         </div>
 
-        <!-- NEW TECHNICAL BLOCKS -->
         <div class="skill">
-          <div class="skill-head">
-            <div class="skill-name">Experimental Design & Statistics</div>
-            <div class="skill-level">84%</div>
-          </div>
+          <div class="skill-head"><div class="skill-name">Experimental Design & Statistics</div><div class="skill-level">84%</div></div>
           <div class="desc">Planning and analysis of field trials (RCBD/Factorial), ANOVA, contrasts, power analysis and control of field variability.</div>
           <div class="track"><div class="bar" style="--w:84%"></div></div>
           <div class="tagrow"><span class="tag">RCBD</span><span class="tag">ANOVA</span><span class="tag">Power analysis</span></div>
         </div>
 
         <div class="skill">
-          <div class="skill-head">
-            <div class="skill-name">Agronomic Diagnostics & Prescriptions</div>
-            <div class="skill-level">80%</div>
-          </div>
-          <div class="desc">Remote-sensing driven diagnosis (indices/spectra), agronomic interpretation, and variable-rate prescription maps with robust thresholds.</div>
+          <div class="skill-head"><div class="skill-name">Agronomic Diagnostics & Prescriptions</div><div class="skill-level">80%</div></div>
+          <div class="desc">Remote-sensing driven diagnosis (indices/spectra), agronomic interpretation, and variable-rate prescription maps.</div>
           <div class="track"><div class="bar" style="--w:80%"></div></div>
           <div class="tagrow"><span class="tag">Nutrient stress</span><span class="tag">VRA maps</span><span class="tag">Thresholds</span></div>
         </div>
 
         <div class="skill">
-          <div class="skill-head">
-            <div class="skill-name">RTK Survey & Ground Control</div>
-            <div class="skill-level">81%</div>
-          </div>
-          <div class="desc">GCP layout and capture, base/rover setup, RTK/PPK logs, checkpoints and accuracy reporting for reliable mapping.</div>
+          <div class="skill-head"><div class="skill-name">RTK Survey & Ground Control</div><div class="skill-level">81%</div></div>
+          <div class="desc">GCP layout/capture, base/rover, RTK/PPK logs, checkpoints and accuracy reporting.</div>
           <div class="track"><div class="bar" style="--w:81%"></div></div>
-          <div class="tagrow">
-            <span class="tag">GCPs</span>
-            <span class="tag">Checkpoints</span>
-            <span class="tag">RTK/PPK</span>
-            <span class="tag">Accuracy report</span>
-          </div>
+          <div class="tagrow"><span class="tag">GCPs</span><span class="tag">Checkpoints</span><span class="tag">RTK/PPK</span><span class="tag">Accuracy report</span></div>
         </div>
 
-        <!-- PROFESSIONAL/TEAMWORK -->
         <div class="skill">
           <div class="skill-head"><div class="skill-name">Teamwork and Collaboration</div><div class="skill-level">95%</div></div>
           <div class="desc">Effective cooperation in multidisciplinary teams to achieve project goals.</div>
@@ -218,7 +183,7 @@
 
         <div class="skill">
           <div class="skill-head"><div class="skill-name">Professional Demeanor</div><div class="skill-level">90%</div></div>
-          <div class="desc">Maintaining a respectful, composed, and confident presence in professional environments.</div>
+          <div class="desc">Respectful, composed, and confident presence in professional environments.</div>
           <div class="track"><div class="bar" style="--w:90%"></div></div>
         </div>
       </section>
@@ -305,14 +270,12 @@
             <div class="track"><div class="bar" style="--w:90%"></div></div>
             <div class="tagrow"><span class="tag">John Deere</span><span class="tag">Case IH</span><span class="tag">Autosteer</span></div>
           </div>
-
           <div class="skill">
             <div class="skill-head"><div class="skill-name">Combine Harvesters</div><div class="skill-level">85%</div></div>
             <div class="desc">Harvest operations, yield monitoring, and machine calibration for data accuracy.</div>
             <div class="track"><div class="bar" style="--w:85%"></div></div>
             <div class="tagrow"><span class="tag">John Deere</span><span class="tag">Case IH</span><span class="tag">Yield maps</span></div>
           </div>
-
           <div class="skill">
             <div class="skill-head"><div class="skill-name">Sprayers</div><div class="skill-level">80%</div></div>
             <div class="desc">Chemical applications, boom calibration, and precision targeting with variable-rate technology.</div>
@@ -341,6 +304,49 @@
         </div>
       </section>
 
+      <!-- MEMBERSHIP -->
+      <section class="card lg-12">
+        <h2>Membership in professional societies</h2>
+        <div class="skill">
+          <div class="skill-head">
+            <div class="skill-name">
+              American Society of Agronomy (ASA); Crop Science Society of America (CSSA); Soil Science Society of America (SSSA)
+            </div>
+            <span class="badge">Member</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- LICENSES -->
+      <section class="card lg-12">
+        <h2>Licenses</h2>
+
+        <div class="skill">
+          <div class="skill-head">
+            <div class="skill-name">FAA Part 107 — Remote Pilot (sUAS)</div>
+            <span class="badge">United States</span>
+          </div>
+          <div class="desc">Status: Active.</div>
+          <div class="tagrow"><span class="tag">Drone Pilot</span><span class="tag">Remote ID / NPRM</span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head">
+            <div class="skill-name">Louisiana Commercial Pesticide Applicator — Categories 1 &amp; 10</div>
+            <span class="badge">Louisiana Dept. of Agriculture &amp; Forestry</span>
+          </div>
+          <div class="desc">ID: 004MH7 · Categories: 1 (Agricultural Pest Control) &amp; 10 (Demonstration &amp; Research) · Expiration: 12/31/2024 · Recertify by: 05/29/2027.</div>
+          <div class="tagrow"><span class="tag">Chemicals</span><span class="tag">Applicator</span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head">
+            <div class="skill-name">Driver’s Licenses — United States; Brazil (Category AD)</div>
+            <span class="badge">License</span>
+          </div>
+        </div>
+      </section>
+
       <!-- SENSORS & FIELD INSTRUMENTATION -->
       <section class="card lg-12">
         <h2>Sensors & Field Instrumentation</h2>
@@ -351,7 +357,6 @@
             <div class="track"><div class="bar" style="--w:84%"></div></div>
             <div class="tagrow"><span class="tag">Sentera 65R</span><span class="tag">Micasense Altum PT</span><span class="tag">Sun sensor</span></div>
           </div>
-
           <div class="skill">
             <div class="skill-head"><div class="skill-name">Machinery-Mounted Sensors</div><div class="skill-level">74%</div></div>
             <div class="desc">On-the-go sensing and variable-rate support (e.g., N management with real-time readings).</div>
@@ -360,11 +365,12 @@
           </div>
         </div>
       </section>
-    </div>
 
-    <footer>
-      Tip: edit the fagner percentages by changing the <b>--w</b> value (e.g., <code>style="--w:85%"</code>).
-    </footer>
+      <!-- NEW FOOTER CARD (no more tip text) -->
+      <section class="card lg-12 footer-card">
+        © 2025 Fagner Rontani
+      </section>
+    </div>
   </div>
 </body>
 </html>
