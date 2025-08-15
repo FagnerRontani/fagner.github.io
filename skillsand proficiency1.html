@@ -52,12 +52,27 @@
     .lg-12{grid-column:span 12}
   }
 
-  /* Grids internos (Languages, Sensors, Heavy Machinery) */
-  .nested{grid-template-columns:1fr}              /* mobile: 1 coluna */
-  .cols-2{} .cols-3{}                             /* só marcadores sem efeito no mobile */
+  /* Grids internos genéricos */
+  .nested{grid-template-columns:1fr}
   @media(min-width:900px){
     .nested.cols-2{grid-template-columns:repeat(2,1fr)}
     .nested.cols-3{grid-template-columns:repeat(3,1fr)}
+  }
+
+  /* === Cartões compactos centralizados (NOVO) === */
+  .nested.compact{
+    display:grid;
+    gap:18px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    justify-content:center;   /* centraliza colunas */
+    justify-items:center;     /* centraliza cada cartão */
+  }
+  .nested.compact .skill{
+    width:clamp(240px, 92vw, 320px);
+  }
+  @media (min-width:900px){
+    .nested.compact.cols-3{ grid-template-columns: repeat(3, minmax(240px, 1fr)); }
+    .nested.compact.cols-2{ grid-template-columns: repeat(2, minmax(240px, 1fr)); }
   }
 
   /* ===== CARDS ===== */
@@ -278,7 +293,7 @@
         </div>
       </section>
 
-      <!-- HEAVY MACHINERY OPERATION (agora como grid, sem overflow) -->
+      <!-- HEAVY MACHINERY OPERATION -->
       <section class="card lg-12">
         <h2>Heavy Machinery Operation</h2>
         <div class="grid nested cols-3">
@@ -305,10 +320,10 @@
         </div>
       </section>
 
-      <!-- LANGUAGES (grid interno responsivo) -->
+      <!-- LANGUAGES (compacto e centralizado) -->
       <section class="card lg-12">
         <h2>Languages</h2>
-        <div class="grid nested cols-3">
+        <div class="grid nested compact cols-3">
           <div class="skill">
             <div class="skill-head"><div class="skill-name">English</div><div class="skill-level">90%</div></div>
             <div class="track"><div class="bar" style="--w:90%"></div></div>
@@ -324,10 +339,10 @@
         </div>
       </section>
 
-      <!-- SENSORS & FIELD INSTRUMENTATION (grid interno responsivo) -->
+      <!-- SENSORS & FIELD INSTRUMENTATION (compacto e centralizado) -->
       <section class="card lg-12">
         <h2>Sensors & Field Instrumentation</h2>
-        <div class="grid nested cols-2">
+        <div class="grid nested compact cols-2">
           <div class="skill">
             <div class="skill-head"><div class="skill-name">Multispectral Cameras & Calibration</div><div class="skill-level">84%</div></div>
             <div class="desc">From panel to reflectance, consistent mosaics across flights and dates.</div>
