@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Publications — Fagner Rontani</title>
 <style>
   :root{
@@ -17,21 +17,18 @@
     --ring: 0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.35);
   }
   *{box-sizing:border-box}
-
+  html,body{margin:0;padding:0}
   body{
-    margin:0;
     font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-    color:var(--text);
     background: radial-gradient(1200px 600px at 90% -10%, #123 0%, transparent 70%), var(--bg);
+    color:var(--text);
     overflow-x:hidden;
-    min-height:100vh;       /* fallback */
-    min-height:100dvh;      /* viewport dinâmica correta no mobile */
   }
 
   .wrap{
     max-width:1100px;
-    margin:28px auto 0;
-    padding:0 16px;
+    margin:28px auto;
+    padding:0 16px 80px;           /* respiro extra no fim para mobile */
   }
 
   header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
@@ -48,17 +45,8 @@
   .satellite::after{content:"";position:absolute;width:18px;height:2px;background:#bfe4ff;top:4px;left:-4px;opacity:.9}
   @keyframes orbit {to{transform:rotate(360deg)}}
 
-  .grid{
-    display:grid;
-    gap:18px;
-    grid-template-columns:repeat(12,1fr);
-    /* respiro no container que rola — evita cortar o último card */
-    padding-bottom:120px; /* fallback amplo */
-  }
-  @supports(padding-bottom: max(0px)){
-    .grid{ padding-bottom:max(140px, env(safe-area-inset-bottom) + 72px); }
-  }
-
+  /* ===== GRID ===== */
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
   .card{
     grid-column:span 12;
     background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
@@ -67,7 +55,6 @@
     box-shadow:var(--ring);
     padding:18px
   }
-
   @media(min-width:900px){
     .lg-6{grid-column:span 6}
     .lg-12{grid-column:span 12}
@@ -76,11 +63,13 @@
   h2{font-size:18px;margin:2px 0 14px;letter-spacing:.2px}
   .muted{color:var(--muted)}
 
-  /* PUBLICATION LIST */
-  .pub{display:grid;gap:8px;padding:14px;border-radius:14px;
-    background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}
+  /* ===== PUBLICATION LIST ===== */
+  .pub{
+    display:grid;gap:8px;padding:14px;border-radius:14px;
+    background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)
+  }
   .pub-head{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start;justify-content:space-between}
-  .pub-title{font-weight:700;font-size:16px;line-height:1.35;max-width:72ch;word-break:break-word}
+  .pub-title{font-weight:700;font-size:16px;line-height:1.35;max-width:72ch;overflow-wrap:anywhere}
   .pub-meta{color:#cfe0ff;font-size:13px}
   .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
   .tag{font-size:12px;color:#b7c6e6;border:1px dashed rgba(255,255,255,.16);
@@ -89,7 +78,7 @@
   .btn{
     display:inline-flex;align-items:center;gap:8px;
     padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);
-    background:rgba(255,255,255,.03);color:#e8eeff;text-decoration:none;font-size:13px
+    background:rgba(255,255,255,.03);color:var(--text);text-decoration:none;font-size:13px
   }
   .btn:hover{border-color:rgba(255,255,255,.25)}
   .badge{
@@ -97,7 +86,7 @@
     border:1px solid rgba(77,171,247,.35);padding:3px 8px;border-radius:999px
   }
 
-  /* Barra inferior com ações (SSRN/DOI à esquerda e Download à direita) */
+  /* barra inferior com ações */
   .pub-actions{
     display:flex;justify-content:space-between;align-items:center;margin-top:8px;
   }
@@ -110,9 +99,9 @@
   .download-btn-small:hover{filter:brightness(1.05)}
   .download-btn-small svg{width:12px;height:12px}
 
-  /* Rodapé como último card */
+  /* rodapé como último card com respiro extra */
   .footer-card{
-    padding:12px 0;
+    padding:16px 0 28px 0;  /* + espaço embaixo para não cortar no phone */
     text-align:center;
     color:var(--muted);
     font-size:12px;
@@ -139,7 +128,6 @@
       <section class="card lg-12">
         <h2>Published articles</h2>
 
-        <!-- 1 -->
         <article class="pub">
           <div class="pub-head">
             <div class="pub-title">Application of TensorFlow model for identification of herbaceous mimosa (<i>Mimosa strigillosa</i>) from digital images</div>
@@ -157,15 +145,12 @@
               <a class="btn" href="https://doi.org/10.1016/j.atech.2024.100400" target="_blank" rel="noopener">🔗 DOI</a>
             </div>
             <a class="download-btn-small" href="#" download aria-label="Download paper">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
           </div>
         </article>
 
-        <!-- 2 -->
         <article class="pub">
           <div class="pub-head">
             <div class="pub-title">Precise Positioning in UAV Photogrammetry: N Fertility Study in Maize (<i>Zea mays</i> L.)</div>
@@ -182,15 +167,12 @@
               <a class="btn" href="https://ssrn.com/abstract=4681686" target="_blank" rel="noopener">🔗 SSRN</a>
             </div>
             <a class="download-btn-small" href="#" download aria-label="Download preprint">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
           </div>
         </article>
 
-        <!-- 3 -->
         <article class="pub">
           <div class="pub-head">
             <div class="pub-title">Initial development of seedlings of <i>Schizolobium parahyba</i> (Vell.) S. F. Blake produced on different substrates</div>
@@ -198,18 +180,14 @@
           </div>
           <div class="pub-meta"><b>Rontani, F.</b>; Pires, J.; Dellarmelin, S.; Dias, T.; Cantarelli, E. <i>Enciclopédia Biosfera</i>, 14:391–401.</div>
           <div class="tagrow"><span class="tag">Seedlings</span><span class="tag">Substrates</span></div>
-          <div class="pub-actions">
-            <div class="btnrow"></div>
+          <div class="pub-actions"><div class="btnrow"></div>
             <a class="download-btn-small" href="#" download aria-label="Download article">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
           </div>
         </article>
 
-        <!-- 4 -->
         <article class="pub">
           <div class="pub-head">
             <div class="pub-title">UAV Remote Sensing for Monitoring Nitrogen Stress in Maize under Excessive Moisture</div>
@@ -219,18 +197,14 @@
             Acharya, B.; Setiyono, T.; Dodla, S.; <b>Rontani, F.</b>; Moseley, D.; Gentimis, T.; Adhikari, R.; Duron, D.; Bortolon, G.; Parvej, R.; Tubana, B.
           </div>
           <div class="tagrow"><span class="tag">UAV</span><span class="tag">Maize</span><span class="tag">Nitrogen</span></div>
-          <div class="pub-actions">
-            <div class="btnrow"></div>
+          <div class="pub-actions"><div class="btnrow"></div>
             <a class="download-btn-small" href="#" download aria-label="Download article">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
           </div>
         </article>
 
-        <!-- 5 -->
         <article class="pub">
           <div class="pub-head">
             <div class="pub-title">Evaluating the Impact of Excessive Moisture on Crop Stands using UAV Remote Sensing</div>
@@ -240,12 +214,9 @@
             Acharya, B.; Setiyono, T.; Dodla, S.; <b>Rontani, F.</b>; Moseley, D.; Gentimis, T.; Adhikari, R.; Duron, D.; Bortolon, G.; Parvej, R.; Tubana, B.
           </div>
           <div class="tagrow"><span class="tag">Excess Moisture</span><span class="tag">Stand Count</span><span class="tag">UAV</span></div>
-          <div class="pub-actions">
-            <div class="btnrow"></div>
+          <div class="pub-actions"><div class="btnrow"></div>
             <a class="download-btn-small" href="#" download aria-label="Download article">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
           </div>
@@ -263,12 +234,9 @@
           </div>
           <div class="pub-meta">Shiratsuchi, L. S.; Carneiro, F. M.; Ferreira, F. M.; Lanza, P.; <b>Rontani, F. A.</b>; ... In: <i>Advances in Sensor Technology for Sustainable Crop Production</i>. Burleigh Dodds.</div>
           <div class="tagrow"><span class="tag">Sensors</span><span class="tag">PA</span></div>
-          <div class="pub-actions">
-            <div class="btnrow"></div>
+          <div class="pub-actions"><div class="btnrow"></div>
             <a class="download-btn-small" href="#" download aria-label="Download chapter">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
           </div>
@@ -281,12 +249,9 @@
           </div>
           <div class="pub-meta">Brito Filho, A. L.; Carneiro, F. M.; <b>Rontani, F. A.</b>; ... In: <i>Medio ambiente: agricultura, desarrollo y sustentabilidad 2</i>. Atena.</div>
           <div class="tagrow"><span class="tag">Active/Passive</span><span class="tag">Rice</span></div>
-          <div class="pub-actions">
-            <div class="btnrow"></div>
+          <div class="pub-actions"><div class="btnrow"></div>
             <a class="download-btn-small" href="#" download aria-label="Download chapter">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
           </div>
@@ -299,12 +264,9 @@
           </div>
           <div class="pub-meta">Damian, J. M.; Fornari, M.; ... <b>Rontani, F. A.</b>. In: <i>Precision Agriculture in Rio Grande do Sul</i>. CESPOL.</div>
           <div class="tagrow"><span class="tag">RPAS</span><span class="tag">Agriculture</span></div>
-          <div class="pub-actions">
-            <div class="btnrow"></div>
+          <div class="pub-actions"><div class="btnrow"></div>
             <a class="download-btn-small" href="#" download aria-label="Download chapter">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
           </div>
@@ -317,12 +279,9 @@
           </div>
           <div class="pub-meta"><b>Rontani, F. A.</b>; Santi, A. L.; ... In: <i>Proceedings/Book — CESPOL</i>.</div>
           <div class="tagrow"><span class="tag">Corn</span><span class="tag">Plantability</span></div>
-          <div class="pub-actions">
-            <div class="btnrow"></div>
+          <div class="pub-actions"><div class="btnrow"></div>
             <a class="download-btn-small" href="#" download aria-label="Download chapter">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
           </div>
@@ -335,12 +294,9 @@
           </div>
           <div class="pub-meta">Dácas, T.; Santi, A. L.; <b>Rontani, F. A.</b>; ... In: <i>Digital Agriculture</i>. CESPOL.</div>
           <div class="tagrow"><span class="tag">Soybean</span><span class="tag">Gypsum</span></div>
-          <div class="pub-actions">
-            <div class="btnrow"></div>
+          <div class="pub-actions"><div class="btnrow"></div>
             <a class="download-btn-small" href="#" download aria-label="Download chapter">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
           </div>
@@ -353,12 +309,9 @@
           </div>
           <div class="pub-meta">Souza, F. M.; Barbosa, E. A.; ... <b>Rontani, F. A.</b>. In: <i>Digital Agriculture</i>. CESPOL.</div>
           <div class="tagrow"><span class="tag">Mycorrhizae</span><span class="tag">Corn</span></div>
-          <div class="pub-actions">
-            <div class="btnrow"></div>
+          <div class="pub-actions"><div class="btnrow"></div>
             <a class="download-btn-small" href="#" download aria-label="Download chapter">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
           </div>
@@ -376,7 +329,12 @@
           </div>
           <div class="pub-meta"><b>Rontani, F. A.</b>; Setiyono, T.; Acharya, B.; Duron, D.; Adhikari, R.; Dodla, S. K.; Egbedi, P. E.</div>
           <div class="tagrow"><span class="tag">Multispectral</span><span class="tag">RGB</span><span class="tag">VIs</span></div>
-          <div class="pub-actions"><div class="btnrow"></div></div>
+          <div class="pub-actions"><div class="btnrow"></div>
+            <a class="download-btn-small" href="#" download aria-label="Download poster">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Download
+            </a>
+          </div>
         </article>
 
         <article class="pub">
@@ -386,7 +344,12 @@
           </div>
           <div class="pub-meta"><b>Rontani, F. A.</b>; Setiyono, T.; Shiratsuchi, L. S.; Dodla, S. K.; Parvej, R.; Tubana, B.</div>
           <div class="tagrow"><span class="tag">Maize</span><span class="tag">Nitrogen</span><span class="tag">Rainfall</span></div>
-          <div class="pub-actions"><div class="btnrow"></div></div>
+          <div class="pub-actions"><div class="btnrow"></div>
+            <a class="download-btn-small" href="#" download aria-label="Download poster">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Download
+            </a>
+          </div>
         </article>
 
         <article class="pub">
@@ -396,7 +359,12 @@
           </div>
           <div class="pub-meta"><b>Rontani, F. A.</b>; de Santana Martins, M.; Lanza, P.; Santos, L. B.; Teodoro, P. E.; Silva, C. A.; Shiratsuchi, L. S.</div>
           <div class="tagrow"><span class="tag">NDVI</span><span class="tag">Rice</span></div>
-          <div class="pub-actions"><div class="btnrow"></div></div>
+          <div class="pub-actions"><div class="btnrow"></div>
+            <a class="download-btn-small" href="#" download aria-label="Download poster">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Download
+            </a>
+          </div>
         </article>
 
         <article class="pub">
@@ -406,7 +374,12 @@
           </div>
           <div class="pub-meta"><b>Rontani, F. A.</b>; Karp, F. H. S.; de Santana Martins, M.; Lanza, P.; Silva, C. A.; Maeda, M. M.; Shiratsuchi, L. S.</div>
           <div class="tagrow"><span class="tag">UAV</span><span class="tag">VIs</span><span class="tag">Varieties</span></div>
-          <div class="pub-actions"><div class="btnrow"></div></div>
+          <div class="pub-actions"><div class="btnrow"></div>
+            <a class="download-btn-small" href="#" download aria-label="Download poster">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Download
+            </a>
+          </div>
         </article>
       </section>
 
@@ -429,7 +402,47 @@
         </article>
       </section>
 
-      <!-- Footer dentro da grade como último card -->
+      <!-- MEMBERSHIPS -->
+      <section class="card lg-12">
+        <h2>Membership in professional societies</h2>
+        <article class="pub">
+          <div class="pub-head">
+            <div class="pub-title">American Society of Agronomy (ASA); Crop Science Society of America (CSSA); Soil Science Society of America (SSSA)</div>
+            <span class="badge">Member</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- LICENSES -->
+      <section class="card lg-12">
+        <h2>Licenses</h2>
+        <article class="pub">
+          <div class="pub-head">
+            <div class="pub-title">FAA Part 107 — Remote Pilot (sUAS)</div>
+            <span class="badge">United States</span>
+          </div>
+          <div class="pub-meta">Status: Active.</div>
+          <div class="tagrow"><span class="tag">Drone Pilot</span><span class="tag">Remote ID / NPRM</span></div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-head">
+            <div class="pub-title">Louisiana Commercial Pesticide Applicator — Categories 1 & 10</div>
+            <span class="badge">Louisiana Dept. of Agriculture &amp; Forestry</span>
+          </div>
+          <div class="pub-meta">ID: 004MH7 · Categories: 1 (Agricultural Pest Control) & 10 (Demonstration & Research) · Expiration: 12/31/2024 · Recertify by: 05/29/2027.</div>
+          <div class="tagrow"><span class="tag">Chemicals</span><span class="tag">Applicator</span></div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-head">
+            <div class="pub-title">Driver’s Licenses — United States; Brazil (Category AD)</div>
+            <span class="badge">License</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- FOOTER DENTRO DA ÚLTIMA BARRA -->
       <section class="card lg-12 footer-card">
         © 2025 Fagner Rontani
       </section>
