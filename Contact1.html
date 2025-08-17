@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Contact — Fagner Rontani</title>
 <style>
   :root{
@@ -16,13 +16,34 @@
     --radius:18px;
     --ring: 0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.35);
   }
-  *{box-sizing:border-box}
+
+  /* corrige barra escura no iOS */
+  html, body { margin:0; padding:0; overflow-x:hidden; }
+  html{
+    /* dá o mesmo fundo/base do body para evitar “linha” no final da página */
+    background: var(--bg);
+    color-scheme: dark; /* ajuda o iOS a renderizar barras/transições escuras */
+  }
+
   body{
-    margin:0;
     font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-    background: radial-gradient(1200px 600px at 90% -10%, #123 0%, transparent 70%), var(--bg);
+    /* altura mínima para cobrir a viewport corretamente no iOS */
+    min-height: 100svh;
+    background:
+      radial-gradient(1200px 600px at 90% -10%, #123 0%, transparent 70%),
+      var(--bg);
     color:var(--text);
   }
+  @supports (height: 100dvh){
+    body{ min-height: 100dvh; }
+  }
+  /* reserva a safe area inferior para evitar “faixa/linha” no bounce */
+  body::after{
+    content:"";
+    display:block;
+    height: env(safe-area-inset-bottom);
+  }
+
   .wrap{max-width:1100px;margin:28px auto 56px;padding:0 16px}
   header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
   h1{font-size:28px;margin:0}
@@ -82,7 +103,7 @@
     max-width:1200px; 
     margin:48px auto 28px; 
     padding:0 20px;
-    margin-top:30cm; /* fixo 15cm para baixo */
+    margin-top:30cm; /* você definiu fixo para baixo */
   }
   .footer-pill{
     max-width:900px; margin:0 auto; padding:18px 24px; text-align:center;
