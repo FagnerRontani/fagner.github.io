@@ -87,6 +87,7 @@ Click the <b>Download</b> button to access the PDF.</p>
       <section class="card lg-12">
         <h2>Journal articles</h2>
 
+        <!-- FIRST ARTICLE (Download -> /papers/teste.pdf) -->
         <article class="pub">
           <div class="pub-head">
             <div class="pub-title">Characterizing optimum N rate in waterlogged maize (<i>Zea mays</i> L.) with unmanned aerial vehicle (UAV) remote sensing</div>
@@ -98,13 +99,21 @@ Click the <b>Download</b> button to access the PDF.</p>
           <div class="tagrow"><span class="tag">UAV</span><span class="tag">Nitrogen</span><span class="tag">Maize</span></div>
           <div class="pub-actions">
             <div class="btnrow"><a class="btn" href="https://doi.org/10.3390/agronomy15020434" target="_blank" rel="noopener">🔗 DOI</a></div>
-            <a class="download-btn-small" href="papers/Characterizing optimum N rate in waterlogged maize (Zea mays L.) with unmanned aerial vehicle (UAV) remote sensing.pdf" download aria-label="Download article">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a class="download-btn-small"
+               href="/papers/teste.pdf"
+               download="teste.pdf"
+               aria-label="Download article">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
               Download
             </a>
           </div>
         </article>
 
+        <!-- OTHER ARTICLES (unchanged) -->
         <article class="pub">
           <div class="pub-head">
             <div class="pub-title">Application of TensorFlow model for identification of herbaceous mimosa (<i>Mimosa strigillosa</i>) from digital images</div>
@@ -116,10 +125,10 @@ Click the <b>Download</b> button to access the PDF.</p>
           <div class="tagrow"><span class="tag">Deep Learning</span><span class="tag">TensorFlow</span><span class="tag">Weed ID</span></div>
           <div class="pub-actions">
             <div class="btnrow"><a class="btn" href="https://doi.org/10.1016/j.atech.2024.100400" target="_blank" rel="noopener">🔗 DOI</a></div>
-            <!-- PDF está na RAIZ do repositório (mesmo nível de Publications.html) -->
             <a class="download-btn-small"
                href="Application-of-TensorFlow-model-for-identification-of-herbaceous-mimosa-(Mimosa-strigillosa)-from-digital-images.pdf"
-               download aria-label="Download article">
+               download
+               aria-label="Download article">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
@@ -270,7 +279,7 @@ Click the <b>Download</b> button to access the PDF.</p>
         </article>
       </section>
 
-      <!-- POSTER PRESENTATIONS (placeholders) -->
+      <!-- POSTER PRESENTATIONS -->
       <section class="card lg-12">
         <h2>Poster presentations</h2>
         <!-- seus posters aqui -->
