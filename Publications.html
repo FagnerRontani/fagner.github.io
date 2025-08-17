@@ -63,7 +63,19 @@
   .download-btn-small:hover{filter:brightness(1.05)}
   .download-btn-small svg{width:12px;height:12px}
 
-  .footer-card{padding:16px 0 28px 0;text-align:center;color:var(--muted);font-size:12px}
+  /* --- Footer pill --- */
+  footer{grid-column:span 12;text-align:center}
+  .footer-pill{
+    display:inline-block;
+    padding:11px 404px;
+    border-radius:999px;
+    background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.08);
+    color:var(--muted);
+    font-size:13px;
+    box-shadow:var(--ring);
+    margin-top:100px; /* ~10cm de espaço antes do footer */
+  }
 </style>
 </head>
 <body>
@@ -78,11 +90,11 @@
 
     <div class="grid">
       <section class="card lg-12">
-  <p class="muted">
-    Key resume sections highlighted. Full PDF available for 
-    <span style="color:#39d98a; font-weight:bold;">Download</span>.
-  </p>
-</section>
+        <p class="muted">
+          Key resume sections highlighted. Full PDF available for 
+          <span style="color:#39d98a; font-weight:bold;">Download</span>.
+        </p>
+      </section>
 
       <!-- JOURNAL ARTICLES -->
       <section class="card lg-12">
@@ -213,7 +225,7 @@
         <article class="pub">
           <div class="pub-head">
             <div class="pub-title">Performance of soybean under different doses of gypsum in the Northwest region of Rio Grande do Sul</div>
-          <span class="badge">Book Chapter · 2017</span>
+            <span class="badge">Book Chapter · 2017</span>
           </div>
           <div class="pub-meta">
             Dácas, T.; Santi, A. L.; <b>Rontani, F. A.</b>; Linck, I. L. D.; Jung, C. I.; Miguel, V. S. In: <i>Digital Agriculture: innovation for efficiency, preservation and productivity</i>. Não-Me-Toque: CESPOL, pp. 272–276.
@@ -363,11 +375,16 @@
         </article>
       </section>
 
-      <!-- FOOTER -->
-      <section class="card lg-12 footer-card">
-        © 2025 Fagner Rontani
-      </section>
+      <!-- FOOTER (pílula) -->
+      <footer id="contact" class="lg-12">
+        <div class="footer-pill">© <span id="year"></span> Fagner Rontani</div>
+      </footer>
     </div>
   </div>
+
+  <script>
+    // ano dinâmico no footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
