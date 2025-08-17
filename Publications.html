@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Publications — Fagner Rontani</title>
 <style>
-  :root{
-    --bg:#0b1220;         /* fundo */
-    --card:#111a2b;       /* cartão */
-    --muted:#a8b3cf;      /* texto secundário */
-    --text:#e8eeff;       /* texto principal */
-    --accent:#39d98a;     /* verde agritech */
-    --accent-2:#4dabf7;   /* azul satélite */
-    --track:#243049;      /* trilho / bordas sutis */
+  :root{ 
+    --bg:#0b1220;
+    --card:#111a2b;
+    --muted:#a8b3cf;
+    --text:#e8eeff;
+    --accent:#39d98a;
+    --accent-2:#4dabf7;
+    --track:#243049;
     --radius:18px;
     --ring: 0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.35);
   }
@@ -24,17 +24,10 @@
     color:var(--text);
     overflow-x:hidden;
   }
-
-  .wrap{
-    max-width:1100px;
-    margin:28px auto;
-    padding:0 16px 80px;           /* respiro extra no fim para mobile */
-  }
-
+  .wrap{max-width:1100px;margin:28px auto;padding:0 16px 80px}
   header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
   h1{font-size:28px;margin:0}
   p.lead{color:var(--muted);margin:6px 0 0;font-size:14px}
-
   .planet{width:42px;height:42px;border-radius:50%;
     background: radial-gradient(circle at 30% 30%, #7fd, #2aa 45%, #0a7 60%, #045);
     box-shadow: 0 0 0 2px rgba(255,255,255,.05), 0 12px 30px rgba(0,0,0,.45);
@@ -45,67 +38,32 @@
   .satellite::after{content:"";position:absolute;width:18px;height:2px;background:#bfe4ff;top:4px;left:-4px;opacity:.9}
   @keyframes orbit {to{transform:rotate(360deg)}}
 
-  /* ===== GRID ===== */
   .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
-  .card{
-    grid-column:span 12;
-    background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
-    border:1px solid rgba(255,255,255,.06);
-    border-radius:var(--radius);
-    box-shadow:var(--ring);
-    padding:18px
-  }
-  @media(min-width:900px){
-    .lg-6{grid-column:span 6}
-    .lg-12{grid-column:span 12}
-  }
-
+  .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+    border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--ring);padding:18px}
+  @media(min-width:900px){.lg-6{grid-column:span 6}.lg-12{grid-column:span 12}}
   h2{font-size:18px;margin:2px 0 14px;letter-spacing:.2px}
   .muted{color:var(--muted)}
 
-  /* ===== PUBLICATION LIST ===== */
-  .pub{
-    display:grid;gap:8px;padding:14px;border-radius:14px;
-    background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)
-  }
+  .pub{display:grid;gap:8px;padding:14px;border-radius:14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}
   .pub-head{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start;justify-content:space-between}
   .pub-title{font-weight:700;font-size:16px;line-height:1.35;max-width:72ch;overflow-wrap:anywhere}
   .pub-meta{color:#cfe0ff;font-size:13px}
   .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-  .tag{font-size:12px;color:#b7c6e6;border:1px dashed rgba(255,255,255,.16);
-    padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.03)}
+  .tag{font-size:12px;color:#b7c6e6;border:1px dashed rgba(255,255,255,.16);padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.03)}
   .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);
-    background:rgba(255,255,255,.03);color:var(--text);text-decoration:none;font-size:13px
-  }
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.03);color:var(--text);text-decoration:none;font-size:13px}
   .btn:hover{border-color:rgba(255,255,255,.25)}
-  .badge{
-    font-size:12px;color:#9ec7ff;background:rgba(77,171,247,.1);
-    border:1px solid rgba(77,171,247,.35);padding:3px 8px;border-radius:999px
-  }
+  .badge{font-size:12px;color:#9ec7ff;background:rgba(77,171,247,.1);border:1px solid rgba(77,171,247,.35);padding:3px 8px;border-radius:999px}
 
-  /* barra inferior com ações */
-  .pub-actions{
-    display:flex;justify-content:space-between;align-items:center;margin-top:8px;
-  }
-  .download-btn-small{
-    display:inline-flex;align-items:center;gap:4px;
-    background:#39d98a;color:#052012;font-size:11px;font-weight:600;
-    padding:3px 8px;border-radius:999px;text-decoration:none;
-    box-shadow:0 3px 10px rgba(57,217,138,.25)
-  }
+  .pub-actions{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+  .download-btn-small{display:inline-flex;align-items:center;gap:4px;background:#39d98a;color:#052012;font-size:11px;font-weight:600;
+    padding:3px 8px;border-radius:999px;text-decoration:none;box-shadow:0 3px 10px rgba(57,217,138,.25)}
   .download-btn-small:hover{filter:brightness(1.05)}
   .download-btn-small svg{width:12px;height:12px}
 
-  /* rodapé como último card com respiro extra */
-  .footer-card{
-    padding:16px 0 28px 0;  /* + espaço embaixo para não cortar no phone */
-    text-align:center;
-    color:var(--muted);
-    font-size:12px;
-  }
+  .footer-card{padding:16px 0 28px 0;text-align:center;color:var(--muted);font-size:12px}
 </style>
 </head>
 <body>
@@ -137,14 +95,10 @@ Click the <b>Download</b> button to access the PDF.</p>
           <div class="pub-meta">
             Acharya, B.; Dodla, S.; Tubana, B.; Gentimis, T.; <b>Rontani, F.</b>; Adhikari, R.; Duron, D.; Bortolon, G.; Setiyono, T. <i>Agronomy</i>, 15(2), 434.
           </div>
-          <div class="tagrow">
-            <span class="tag">UAV</span><span class="tag">Nitrogen</span><span class="tag">Maize</span>
-          </div>
+          <div class="tagrow"><span class="tag">UAV</span><span class="tag">Nitrogen</span><span class="tag">Maize</span></div>
           <div class="pub-actions">
-            <div class="btnrow">
-              <a class="btn" href="https://doi.org/10.3390/agronomy15020434" target="_blank" rel="noopener">🔗 DOI</a>
-            </div>
-            <a class="download-btn-small" href="#" download aria-label="Download article">
+            <div class="btnrow"><a class="btn" href="https://doi.org/10.3390/agronomy15020434" target="_blank" rel="noopener">🔗 DOI</a></div>
+            <a class="download-btn-small" href="papers/Characterizing optimum N rate in waterlogged maize (Zea mays L.) with unmanned aerial vehicle (UAV) remote sensing.pdf" download aria-label="Download article">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
@@ -159,14 +113,13 @@ Click the <b>Download</b> button to access the PDF.</p>
           <div class="pub-meta">
             Setiyono, T.; Gentimis, T.; <b>Rontani, F.</b>; Duron, D.; Bortolon, G.; Adhikari, R.; Acharya, B.; Han, K. J.; Pitman, W. D. <i>Smart Agricultural Technology</i>, 7, 100400.
           </div>
-          <div class="tagrow">
-            <span class="tag">Deep Learning</span><span class="tag">TensorFlow</span><span class="tag">Weed ID</span>
-          </div>
+          <div class="tagrow"><span class="tag">Deep Learning</span><span class="tag">TensorFlow</span><span class="tag">Weed ID</span></div>
           <div class="pub-actions">
-            <div class="btnrow">
-              <a class="btn" href="https://doi.org/10.1016/j.atech.2024.100400" target="_blank" rel="noopener">🔗 DOI</a>
-            </div>
-            <a class="download-btn-small" href="#" download aria-label="Download article">
+            <div class="btnrow"><a class="btn" href="https://doi.org/10.1016/j.atech.2024.100400" target="_blank" rel="noopener">🔗 DOI</a></div>
+            <!-- PDF está na RAIZ do repositório (mesmo nível de Publications.html) -->
+            <a class="download-btn-small"
+               href="Application-of-TensorFlow-model-for-identification-of-herbaceous-mimosa-(Mimosa-strigillosa)-from-digital-images.pdf"
+               download aria-label="Download article">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
@@ -181,14 +134,10 @@ Click the <b>Download</b> button to access the PDF.</p>
           <div class="pub-meta">
             Jaeger, C. A.; Spohr, R. B.; Baumhardt, E.; <b>Rontani, F. A.</b> <i>RA’EGA – O Espaço Geográfico em Análise</i>, 61(1), 134–152.
           </div>
-          <div class="tagrow">
-            <span class="tag">Hydrology</span><span class="tag">Pampa Biome</span>
-          </div>
+          <div class="tagrow"><span class="tag">Hydrology</span><span class="tag">Pampa Biome</span></div>
           <div class="pub-actions">
-            <div class="btnrow">
-              <a class="btn" href="https://doi.org/10.5380/raega.v61i1.95494" target="_blank" rel="noopener">🔗 DOI</a>
-            </div>
-            <a class="download-btn-small" href="#" download aria-label="Download article">
+            <div class="btnrow"><a class="btn" href="https://doi.org/10.5380/raega.v61i1.95494" target="_blank" rel="noopener">🔗 DOI</a></div>
+            <a class="download-btn-small" href="papers/Determination of water retention by the native field of the Pampa Biome with simulated rain.pdf" download aria-label="Download article">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
@@ -203,12 +152,10 @@ Click the <b>Download</b> button to access the PDF.</p>
           <div class="pub-meta">
             <b>Rontani, F.</b>; Pires, J.; Dellarmelin, S.; Dias, T.; Cantarelli, E. <i>Enciclopédia Biosfera</i>, 14, 391–401. DOI: 10.18677/EnciBio_2017A37
           </div>
-          <div class="tagrow">
-            <span class="tag">Seedlings</span><span class="tag">Substrates</span>
-          </div>
+          <div class="tagrow"><span class="tag">Seedlings</span><span class="tag">Substrates</span></div>
           <div class="pub-actions">
             <div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download article">
+            <a class="download-btn-small" href="papers/Initial development of seedlings of Schizolobium parahyba (Vell.) S. F. Blake produced on different substrates.pdf" download aria-label="Download article">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
@@ -222,23 +169,6 @@ Click the <b>Download</b> button to access the PDF.</p>
 
         <article class="pub">
           <div class="pub-head">
-            <div class="pub-title">Using remote and proximal sensor data in precision agriculture applications</div>
-            <span class="badge">Book Chapter · 2023</span>
-          </div>
-          <div class="pub-meta">
-            Shiratsuchi, L. S.; Carneiro, F. M.; Ferreira, F. M.; Lanza, P.; <b>Rontani, F. A.</b>; Brito Filho, A. L.; Seben Junior, G. F.; Brandão, Z. N.; Silva Junior, C. A.; Teodoro, P. E.; Dodla, S. In: <i>Advances in Sensor Technology for Sustainable Crop Production</i>. Cambridge: Burleigh Dodds Science Publishing, pp. 1–26.
-          </div>
-          <div class="tagrow"><span class="tag">Sensors</span><span class="tag">Precision Agriculture</span></div>
-          <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download chapter">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Download
-            </a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-head">
             <div class="pub-title">Comparison between active and passive optics sensors to monitor spectral behavior during rice growth stages</div>
             <span class="badge">Book Chapter · 2023</span>
           </div>
@@ -247,7 +177,7 @@ Click the <b>Download</b> button to access the PDF.</p>
           </div>
           <div class="tagrow"><span class="tag">Active vs. Passive</span><span class="tag">Rice</span></div>
           <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download chapter">
+            <a class="download-btn-small" href="papers/Comparison between active and passive optics sensors to monitor spectral behavior during rice growth stages.pdf" download aria-label="Download chapter">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
@@ -256,32 +186,15 @@ Click the <b>Download</b> button to access the PDF.</p>
 
         <article class="pub">
           <div class="pub-head">
-            <div class="pub-title">The use of Remotely Piloted Aircraft (RPAS) in agriculture</div>
-            <span class="badge">Book Chapter · 2016</span>
-          </div>
-          <div class="pub-meta">
-            Damian, J. M.; Fornari, M.; Santi, A. L.; Pias, O. H. C.; Silva, D. A. A.; Fonseca, A. Z.; Bello, R. A. M. D.; <b>Rontani, F. A.</b>. In: <i>Precision Agriculture in Rio Grande do Sul</i>. Santa Maria: CESPOL, pp. 285–309.
-          </div>
-          <div class="tagrow"><span class="tag">RPAS</span><span class="tag">Agriculture</span></div>
-          <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download chapter">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Download
-            </a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-head">
-            <div class="pub-title">Corn plantability subjected to different coefficients of variation in the sowing line</div>
+            <div class="pub-title">Maize plantability submitted to different coefficients of variation in the sowing line</div>
             <span class="badge">Book Chapter · 2017</span>
           </div>
           <div class="pub-meta">
             <b>Rontani, F. A.</b>; Santi, A. L.; Silva, D. R. O.; Dácas, T.; Thiel, T.; Knapp, F.; Linck, I. L. D. In: <i>Proceedings — CESPOL</i>, Não-Me-Toque, pp. 397–401.
           </div>
-          <div class="tagrow"><span class="tag">Corn</span><span class="tag">Plantability</span></div>
+          <div class="tagrow"><span class="tag">Maize</span><span class="tag">Plantability</span></div>
           <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download chapter">
+            <a class="download-btn-small" href="papers/Maize plantability submitted to different coefficients of variation in the sowing line.pdf" download aria-label="Download chapter">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
@@ -291,14 +204,14 @@ Click the <b>Download</b> button to access the PDF.</p>
         <article class="pub">
           <div class="pub-head">
             <div class="pub-title">Performance of soybean under different doses of gypsum in the Northwest region of Rio Grande do Sul</div>
-            <span class="badge">Book Chapter · 2017</span>
+          <span class="badge">Book Chapter · 2017</span>
           </div>
           <div class="pub-meta">
             Dácas, T.; Santi, A. L.; <b>Rontani, F. A.</b>; Linck, I. L. D.; Jung, C. I.; Miguel, V. S. In: <i>Digital Agriculture: innovation for efficiency, preservation and productivity</i>. Não-Me-Toque: CESPOL, pp. 272–276.
           </div>
           <div class="tagrow"><span class="tag">Soybean</span><span class="tag">Gypsum</span></div>
           <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download chapter">
+            <a class="download-btn-small" href="papers/Performance of soybean under different doses of gypsum in the Northwest region of Rio Grande do Sul.pdf" download aria-label="Download chapter">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
@@ -315,7 +228,7 @@ Click the <b>Download</b> button to access the PDF.</p>
           </div>
           <div class="tagrow"><span class="tag">Cover Crops</span><span class="tag">Soybean</span></div>
           <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download chapter">
+            <a class="download-btn-small" href="papers/Influence of different winter cover plants on soybean (Glycine max) productivity in a no-till planting system.pdf" download aria-label="Download chapter">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
@@ -324,15 +237,32 @@ Click the <b>Download</b> button to access the PDF.</p>
 
         <article class="pub">
           <div class="pub-head">
-            <div class="pub-title">Influence on soil phosphorus availability and on the productivity of corn (<i>Zea mays</i> L.) relative to the spatial variability of mycorrhizal activity</div>
+            <div class="pub-title">Influence on soil phosphorus availability and maize crop yield in relation to spatial variability of mycorrhizal activity</div>
             <span class="badge">Book Chapter · 2017</span>
           </div>
           <div class="pub-meta">
             Souza, F. M.; Barbosa, E. A.; Santi, A. L.; Bastos, P. F. B.; Candaten, R.; Linck, I. L. D.; <b>Rontani, F. A.</b>. In: <i>Digital Agriculture: innovation for efficiency, preservation and productivity</i>. Não-Me-Toque: CESPOL, pp. 291–299.
           </div>
-          <div class="tagrow"><span class="tag">Phosphorus</span><span class="tag">Mycorrhizae</span><span class="tag">Corn</span></div>
+          <div class="tagrow"><span class="tag">Phosphorus</span><span class="tag">Mycorrhizae</span><span class="tag">Maize</span></div>
           <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download chapter">
+            <a class="download-btn-small" href="papers/Influence on soil phosphorus availability and maize crop yield in relation to spatial variability of mycorrhizal activity.pdf" download aria-label="Download chapter">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Download
+            </a>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-head">
+            <div class="pub-title">The use of Remotely Piloted Aircraft (RPAS) in agriculture</div>
+            <span class="badge">Book Chapter · 2016</span>
+          </div>
+          <div class="pub-meta">
+            Damian, J. M.; Fornari, M.; Santi, A. L.; Pias, O. H. C.; Silva, D. A. A.; Fonseca, A. Z.; Bello, R. A. M. D.; <b>Rontani, F. A.</b>. In: <i>Precision Agriculture in Rio Grande do Sul</i>. Santa Maria: CESPOL, pp. 285–309.
+          </div>
+          <div class="tagrow"><span class="tag">RPAS</span><span class="tag">Agriculture</span></div>
+          <div class="pub-actions"><div class="btnrow"></div>
+            <a class="download-btn-small" href="papers/The use of Remotely Piloted Aircraft (RPAS) in agriculture.pdf" download aria-label="Download chapter">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Download
             </a>
@@ -340,84 +270,10 @@ Click the <b>Download</b> button to access the PDF.</p>
         </article>
       </section>
 
-      <!-- POSTER PRESENTATIONS -->
+      <!-- POSTER PRESENTATIONS (placeholders) -->
       <section class="card lg-12">
         <h2>Poster presentations</h2>
-
-        <article class="pub">
-          <div class="pub-head">
-            <div class="pub-title">Comparative Analysis of Vegetation Indices Extracted from Multispectral and RGB Sensors</div>
-            <span class="badge">ASA-CSSA-SSSA · 2023</span>
-          </div>
-          <div class="pub-meta"><b>Rontani, F. A.</b>; Setiyono, T.; Acharya, B.; Duron, D.; Adhikari, R.; Dodla, S. K.; Egbedi, P. E.</div>
-          <div class="tagrow"><span class="tag">Multispectral</span><span class="tag">RGB</span><span class="tag">Vegetation Indices</span></div>
-          <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download poster">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Download
-            </a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-head">
-            <div class="pub-title">The Impact of Simulated Torrential Rain after Nitrogen Application in Maize</div>
-            <span class="badge">ASA-CSSA-SSSA · 2022</span>
-          </div>
-          <div class="pub-meta"><b>Rontani, F. A.</b>; Setiyono, T.; Shiratsuchi, L. S.; Dodla, S. K.; Parvej, R.; Tubana, B.</div>
-          <div class="tagrow"><span class="tag">Maize</span><span class="tag">Nitrogen</span><span class="tag">Rainfall</span></div>
-          <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download poster">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Download
-            </a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-head">
-            <div class="pub-title">Comparative Analysis for NDVI Assessments in an Irrigated Rice Area</div>
-            <span class="badge">ASA-CSSA-SSSA · 2021</span>
-          </div>
-          <div class="pub-meta"><b>Rontani, F. A.</b>; de Santana Martins, M.; Lanza, P.; Santos, L. B.; Teodoro, P. E.; Silva, C. A.; Shiratsuchi, L. S.</div>
-          <div class="tagrow"><span class="tag">NDVI</span><span class="tag">Rice</span></div>
-          <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download poster">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Download
-            </a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-head">
-            <div class="pub-title">Drone-Based Vegetation Indices Evaluation for Variety Differentiation</div>
-            <span class="badge">ASA-CSSA-SSSA · 2020 (Virtual)</span>
-          </div>
-          <div class="pub-meta"><b>Rontani, F. A.</b>; Karp, F. H. S.; de Santana Martins, M.; Lanza, P.; Silva, C. A.; Maeda, M. M.; Shiratsuchi, L. S.</div>
-          <div class="tagrow"><span class="tag">UAV</span><span class="tag">Vegetation Indices</span><span class="tag">Varieties</span></div>
-          <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download poster">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Download
-            </a>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="pub-head">
-            <div class="pub-title">Drone-Based Vegetation Indices Evaluation for Variety Differentiation</div>
-            <span class="badge">ASA-CSSA-SSSA · 2020</span>
-          </div>
-          <div class="pub-meta"><b>Rontani, F. A.</b>; Hoffmann, F.; Lanza, F.; Silva Junior, C. A.; Maeda, M.; Shiratsuchi, L. S.</div>
-          <div class="tagrow"><span class="tag">UAV</span><span class="tag">VIs</span></div>
-          <div class="pub-actions"><div class="btnrow"></div>
-            <a class="download-btn-small" href="#" download aria-label="Download poster">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Download
-            </a>
-          </div>
-        </article>
+        <!-- seus posters aqui -->
       </section>
 
       <!-- TRAININGS -->
@@ -439,7 +295,7 @@ Click the <b>Download</b> button to access the PDF.</p>
         </article>
       </section>
 
-      <!-- FOOTER DENTRO DA ÚLTIMA BARRA -->
+      <!-- FOOTER -->
       <section class="card lg-12 footer-card">
         © 2025 Fagner Rontani
       </section>
