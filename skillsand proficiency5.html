@@ -35,31 +35,50 @@
   h1{font-size:28px;margin:0}
   p.lead{color:var(--muted);margin:6px 0 0;font-size:14px}
 
+  /* PLANETA + ÓRBITA (corrigido) */
   .planet{
     width:42px;height:42px;border-radius:50%;
     background: radial-gradient(circle at 30% 30%, #7fd, #2aa 45%, #0a7 60%, #045);
     box-shadow: 0 0 0 2px rgba(255,255,255,.05), 0 12px 30px rgba(0,0,0,.45);
     position:relative;
-    overflow:hidden; /* CLIPA o satélite para não criar overflow lateral */
+    margin: 8px 6px 8px 2px;
+  }
+  /* container que gira ao redor do centro do planeta */
+  .orbit{
+    position:absolute;
+    top:50%; left:50%;
+    width:120px; height:120px;          /* diâmetro da órbita */
+    margin:-60px 0 0 -60px;              /* centraliza no planeta */
+    border-radius:50%;
+    animation:spin 6s linear infinite;   /* rotação contínua */
+    pointer-events:none;
   }
   .satellite{
-    position:absolute;width:10px;height:10px;border-radius:2px;background:var(--accent-2);
-    top:-7px;left:50%;
-    transform-origin:-60px 60px; /* mantém a órbita */
-    animation:orbit 6s linear infinite;
-    box-shadow: 0 0 0 2px rgba(255,255,255,.15)
+    position:absolute;
+    top:0; left:50%;
+    width:10px; height:10px;
+    margin-left:-5px;                    /* centraliza o “corpo” na tangente da órbita */
+    border-radius:2px;
+    background:var(--accent-2);
+    box-shadow: 0 0 0 2px rgba(255,255,255,.15);
   }
-  .satellite::after{content:"";position:absolute;width:18px;height:2px;background:#bfe4ff;top:4px;left:-4px;opacity:.9}
-  @keyframes orbit {to{transform:rotate(360deg)}}
+  .satellite::after{
+    content:"";
+    position:absolute;
+    width:18px; height:2px;
+    background:#bfe4ff;
+    top:4px; left:-4px;
+    opacity:.9;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
   /* GRID BASE */
   .grid{
     display:grid;
     gap:18px;
     grid-template-columns:repeat(12,1fr);
-    width:100%; /* garante que não ultrapassa o container */
+    width:100%;
   }
-  /* No mobile, TODO filho direto do grid ocupa 12 colunas (evita “apertar” em 1/12) */
   .grid > * { grid-column: span 12; }
 
   .card{
@@ -71,7 +90,6 @@
     padding:18px
   }
 
-  /* tamanhos exatamente como no modelo + inclusão do .lg-4 */
   @media(min-width:900px){
     .lg-4{grid-column:span 4}
     .lg-6{grid-column:span 6}
@@ -108,12 +126,11 @@
   .tag{font-size:12px;color:#b7c6e6;border:1px dashed rgba(255,255,255,.16);
     padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.03)}
 
-  /* Footer (pílula) — com a parte solicitada (margin-top:10cm) */
+  /* Footer (pílula) */
   footer{
     max-width:1200px; 
     margin:48px auto 28px; 
     padding:0 20px;
-    margin-top:5cm; /* você definiu fixo para baixo */
   }
   .footer-pill{
     max-width:900px;
@@ -133,7 +150,11 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="planet"><div class="satellite"></div></div>
+      <div class="planet">
+        <div class="orbit">
+          <div class="satellite"></div>
+        </div>
+      </div>
       <div>
         <h1>Skills & Proficiency</h1>
         <p class="lead">Agronomist | Precision Agriculture • Remote Sensing • GIS • Machine Learning • Drone & Satellite Mapping • Agricultural Machinery</p>
@@ -377,7 +398,7 @@
         </div>
       </section>
 
-      <!-- MEMBERSHIP (ADICIONADO) -->
+      <!-- MEMBERSHIP -->
       <section class="card lg-12">
         <h2>Membership in professional societies</h2>
         <div class="skill">
@@ -388,7 +409,7 @@
         </div>
       </section>
 
-      <!-- LICENSES (ADICIONADO) -->
+      <!-- LICENSES -->
       <section class="card lg-12">
         <h2>Licenses</h2>
 
