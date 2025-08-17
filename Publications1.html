@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<!-- Viewport fix para iPhone / Safari -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
 <title>Publications — Fagner Rontani</title>
 <style>
   :root{ 
@@ -17,7 +18,13 @@
     --ring: 0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.35);
   }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
+  html,body{
+    margin:0;padding:0;
+    /* Anti “dança” no iPhone */
+    min-height:100svh;
+    overscroll-behavior:contain;
+    -webkit-font-smoothing:antialiased;
+  }
   body{
     font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
     background: radial-gradient(1200px 600px at 90% -10%, #123 0%, transparent 70%), var(--bg);
@@ -63,19 +70,24 @@
   .download-btn-small:hover{filter:brightness(1.05)}
   .download-btn-small svg{width:12px;height:12px}
 
-  /* --- Footer pill --- */
-  footer{grid-column:span 12;text-align:center}
+  /* Rodapé “pílula” + espaçador ~10cm (≈ 378px @96dpi; usando 400px) */
+  .footer-spacer{height:400px}
+  footer{display:flex;justify-content:center}
   .footer-pill{
-    display:inline-block;
-    padding:11px 404px;
-    border-radius:999px;
-    background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 18px;border-radius:999px;
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
     border:1px solid rgba(255,255,255,.08);
-    color:var(--muted);
-    font-size:13px;
-    box-shadow:var(--ring);
-    margin-top:100px; /* ~10cm de espaço antes do footer */
+    color:var(--muted);font-size:12px
   }
+
+  .footer-card{padding:16px 0 28px 0;text-align:center;color:var(--muted);font-size:12px}
+
+  /* Performance/jank fixes */
+  .planet, .satellite { will-change: transform; transform: translateZ(0); }
+  @media (hover:none) and (pointer:coarse){ .satellite{ animation:none; } }
+  @supports (-webkit-touch-callout:none){ .satellite{ animation:none; } }
+  *{ -webkit-tap-highlight-color:transparent; }
 </style>
 </head>
 <body>
@@ -225,7 +237,7 @@
         <article class="pub">
           <div class="pub-head">
             <div class="pub-title">Performance of soybean under different doses of gypsum in the Northwest region of Rio Grande do Sul</div>
-            <span class="badge">Book Chapter · 2017</span>
+          <span class="badge">Book Chapter · 2017</span>
           </div>
           <div class="pub-meta">
             Dácas, T.; Santi, A. L.; <b>Rontani, F. A.</b>; Linck, I. L. D.; Jung, C. I.; Miguel, V. S. In: <i>Digital Agriculture: innovation for efficiency, preservation and productivity</i>. Não-Me-Toque: CESPOL, pp. 272–276.
@@ -375,15 +387,19 @@
         </article>
       </section>
 
-      <!-- FOOTER (pílula) -->
-      <footer id="contact" class="lg-12">
+      <!-- Espaçador ~10cm para empurrar o footer -->
+      <div class="footer-spacer"></div>
+
+      <!-- FOOTER em pílula -->
+      <footer id="contact" class="card lg-12" style="background:transparent; border:none; box-shadow:none; padding:0; text-align:center;">
         <div class="footer-pill">© <span id="year"></span> Fagner Rontani</div>
       </footer>
+
     </div>
   </div>
 
   <script>
-    // ano dinâmico no footer
+    // Atualiza o ano automaticamente
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
